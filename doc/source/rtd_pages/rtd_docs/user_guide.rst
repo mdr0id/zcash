@@ -86,6 +86,15 @@ Before we begin installing Zcash, we need to get some dependencies for your syst
     	- Install devtoolset-3 and autotools-latest (if not previously installed).
     	- Run ``scl enable devtoolset-3 'scl enable autotools-latest bash'`` and do the remainder of the build in the shell that this starts.
 
+    - Windows (cross-compile)
+        .. note:: As of 5/1/2018 this platform is not fully supported. However, we are actively working to complete the components to support this.
+    
+    - macOS
+        .. note:: As of 5/1/2018 this platform is not fully supported. However, we are actively working to complete the components to support this.
+    
+    - CentOS 7
+        .. note:: As of 5/1/2018 this platform is not fully supported. However, we are actively working to complete the components to support this.
+
 Next, we need to ensure we have the correct version of `gcc` and `binutils`
 
 	1. gcc/g++ 4.9 *or later* is required. 
