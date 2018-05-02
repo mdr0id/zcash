@@ -1,14 +1,16 @@
 .. _root:
 
+.. image:: rtd_pages/rtd_docs/images/zcash-logo-gold.png
+   :scale: 15
+   :align: right
+
 ===================
-ZCash Documentation
+Zcash Documentation
 ===================
 
 **************
 What is Zcash?
 **************
-
-
 
 `Zcash <https://z.cash/>`_ is an implementation of the "Zerocash" protocol.
 Based on Bitcoin's code, it intends to offer a far higher standard of privacy

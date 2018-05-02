@@ -297,9 +297,17 @@ As Zcash is an extension of bitcoin, zcash-cli supports all commands that are pa
 
 For a full list of new commands that are not part of bitcoin API (mostly addressing operations on z-addrs) see https://github.com/zcash/zcash/blob/master/doc/payment-api.md
 
-To list all zcash commands, use `./src/zcash-cli help`.
+To list all zcash commands:
 
-To get help with a particular command, use `./src/zcash-cli help <command>`.
+.. code-block:: bash
+    
+    ./src/zcash-cli help
+
+To get help with a particular command:
+
+.. code-block:: bash
+
+    ./src/zcash-cli help <command>
 
 .. attention:: 
    Known Security Issues
