@@ -1,16 +1,14 @@
 .. _root:
 
-Welcome to ZCash v1.0.15 Documentation
-======================================
+===================
+ZCash Documentation
+===================
 
-.. fa:: check
-
-:fa:`square-o`
-
+**************
 What is Zcash?
---------------
+**************
 
---------------
+
 
 `Zcash <https://z.cash/>`_ is an implementation of the "Zerocash" protocol.
 Based on Bitcoin's code, it intends to offer a far higher standard of privacy
@@ -22,26 +20,24 @@ Before you get started with Zcash, please review the important items below:
    - :ref:`code-of-conduct` - This project adheres to our Code of Conduct. By participating, you are expected to uphold this code.
    - :ref:`development_guidelines`- A set of guidelines and best practices to contribute to the development of Zcash. 
    - `Security Information page <https://z.cash/support/security/>`_ - *Zcash is experimental and a work-in-progress. Use at your own risk.*
-   - Deprecation Policy - This release is considered deprecated 16 weeks after the release day. 
+   - Deprecation Policy - A release is considered deprecated 16 weeks after the release day. 
      There is an automatic deprecation shutdown feature which will halt the 
      node some time after this 16 week time period. The automatic feature 
      is based on block height and can be explicitly disabled.
 
 .. _start:
 
+***************
 Getting Started
----------------
-
----------------
+***************
 
 For information on Zcash setup, upgrade, installation, build, configuration, and usage please see the :ref:`User-Guide`.
 
 .. _help:
 
+**********
 Need Help?
-----------
-
-----------
+**********
 
 Answers to common questions from our users can be found in the `FAQ <https://z.cash/support/faq.html>`_.
 
@@ -60,10 +56,9 @@ and check out some of these channels:
 
 .. _lics:
 
+*******
 License
--------
-
--------
+*******
 
    For license information please see :ref:`License` 
 

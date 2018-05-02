@@ -6,8 +6,8 @@ User Guide
 About
 -----
 
-This repository is a fork of `Bitcoin Core`_ which contains protocol
-changes to support the `Zerocash protocol`_. This implements the Zcash
+The Zcash repository is a fork of `Bitcoin Core <https://github.com/bitcoin/bitcoin>`_ which contains protocol
+changes to support the `Zerocash protocol <https://z.cash/technology/index.html>`_. This implements the Zcash
 cryptocurrency, which maintains a separate ledger from the Bitcoin
 network, for several reasons, the most immediate of which is that the
 consensus protocol is different.
@@ -163,6 +163,15 @@ After running the above commands to create the `zcash.conf` file, edit the follo
 	- add the line `testnet=1`
 	- `addnode=testnet.z.cash` instead of `addnode=mainnet.z.cash`
 
+Example `zcash.conf' configured for testnet:
+
+:fa:`file`
+
+.. code-block:: bash
+
+    testnet=1
+    addnode=testnet.z.cash
+
 Usage
 -----
 
@@ -255,11 +264,13 @@ If someone gives you their z-addr...
    $ FRIEND='zcCDe8krwEt1ozWmGZhBDWrcUfmK3Ue5D5z1f6u2EZLLCjQq7mBRkaAPb45FUH4Tca91rF4R1vf983ukR71kHyXeED4quGV'
 
 You can send 0.8 ZEC by doing...
+
 .. code-block:: bash
    
    $ ./src/zcash-cli z_sendmany "$ZADDR" "[{\"amount\": 0.8, \"address\": \"$FRIEND\"}]"
 
 After waiting about a minute, you can check to see if the operation has finished and produced a result:
+
 .. code-block:: bash
 
    $ ./src/zcash-cli z_getoperationresult
