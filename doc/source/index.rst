@@ -3,6 +3,9 @@
 Welcome to ZCash v1.0.15 Documentation
 ======================================
 
+.. fa:: check
+
+:fa:`square-o`
 
 What is Zcash?
 --------------
