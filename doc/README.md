@@ -1,4 +1,7 @@
-# ReadtheDocs Overview
+# ReadtheDocs Overview 
+[![Documentation Status](https://readthedocs.org/projects/zcash/badge/?version=english-docs)](http://zcash.readthedocs.io/en/english-docs/?badge=english-docs)
+
+
 This repo contains material, code, and resources for Zcash ReadtheDocs environment. It is intended as a staging area for existing
 documentation to be updated during the ReadtheDocs migration. Additionally, it provides a local and non-local development environment using [Sphinx](http://www.sphinx-doc.org/en/master/)
 and [ReadtheDocs](https://readthedocs.org/).
