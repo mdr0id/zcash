@@ -41,7 +41,10 @@ If you're on a Debian-based distribution, you can follow the [Debian instruction
    ./zcutil/fetch-params.sh
    ./zcutil/build.sh -j$(nproc)
 
-.. note:: If you don't have `nproc`, then substitute the number of cores on your system. If the build runs out of memory, try again without the `-j` argument, i.e. just `./zcutil/build.sh`. If you are upgrading from testnet, make sure that your ``~/.zcash`` directory contains only ``zcash.conf`` to start with, and that your `~/.zcash/zcash.conf` does not contain `testnet=1` or `addnode=testnet.z.cash`. If the build fails, move aside your ``zcash`` directory and try again by following the instructions in the [Compile it yourself](#or-compile-it-yourself) section below.
+.. note:: If you don't have `nproc`, then substitute the number of cores on your system. 
+   If the build runs out of memory, try again without the `-j` argument, i.e. just `./zcutil/build.sh`. 
+   If you are upgrading from testnet, make sure that your ``~/.zcash`` directory contains only ``zcash.conf`` to start with, and that your `~/.zcash/zcash.conf` does not contain `testnet=1` or `addnode=testnet.z.cash`. 
+   If the build fails, move aside your ``zcash`` directory and try again by following the instructions in the :ref:`installation` section below.
 
 Important Terminology
 ---------------------
@@ -61,6 +64,9 @@ There are a couple options to setup Zcash for the first time.
 	1. If you would like to compile Zcash from source, please skip to the Installation section.
 	2. If you would like to install binary packages for Debian-based operating systems:
 	   https://github.com/zcash/zcash/wiki/Debian-binary-packages
+
+
+.. _installation:
 
 Installation
 ------------
@@ -95,7 +101,7 @@ Before we begin installing Zcash, we need to get some dependencies for your syst
     - CentOS 7
         .. note:: As of 5/1/2018 this platform is not fully supported. However, we are actively working to complete the components to support this.
 
-Next, we need to ensure we have the correct version of `gcc` and `binutils`
+Next, we need to ensure we have the correct version of ``gcc`` and ``binutils``
 
 	1. gcc/g++ 4.9 *or later* is required. 
 	   Zcash has been successfully built using gcc/g++ versions 4.9 to 7.x inclusive. 
@@ -200,7 +206,7 @@ To run it in the background (without the node metrics screen that is normally di
 
 .. important:: If you are running Zcash for the first time you will need to allow your node to fully sync:
     
- .. code-block:: bash
+   .. code-block:: bash
                                                                                                                                                         
              :88SX@888@@X8:                    8;     %X        X%     ;8       
           %%Xt%tt%SSSSS:XXXt@@              X            ::  ::            X    
@@ -237,11 +243,10 @@ To run it in the background (without the node metrics screen that is normally di
 
     [Press Ctrl+C to exit] [Set 'showmetrics=0' to hide]
     
+   Notice the integer value ``319430`` after ``Block height`` field, this means your Zcashd is fully sync.
+   Alternatively, if you were *NOT* fully synced your output would look similar to below:
 
-.. important:: Notice the integer value ``319430`` after ``Block height`` field, this means your Zcashd is fully sync.
-    Alternatively, if you were *NOT* fully synced your output would look similar to below:
-
-    (insert none-synced node ascii)
+   (insert none-synced node ascii)
 
 
 You should be able to use the RPC after it finishes loading. Here's a quick way to test:

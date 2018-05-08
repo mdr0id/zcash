@@ -8,9 +8,8 @@
 Zcash Documentation
 ===================
 
-**************
 What is Zcash?
-**************
+--------------
 
 `Zcash <https://z.cash/>`_ is an implementation of the "Zerocash" protocol.
 Based on Bitcoin's code, it intends to offer a far higher standard of privacy
@@ -29,17 +28,15 @@ Before you get started with Zcash, please review the important items below:
 
 .. _start:
 
-***************
 Getting Started
-***************
+---------------
 
 For information on Zcash setup, upgrade, installation, build, configuration, and usage please see the :ref:`User-Guide`.
 
 .. _help:
 
-**********
 Need Help?
-**********
+----------
 
 Answers to common questions from our users can be found in the `FAQ <https://z.cash/support/faq.html>`_.
 
@@ -58,9 +55,8 @@ and check out some of these channels:
 
 .. _lics:
 
-*******
 License
-*******
+-------
 
    For license information please see :ref:`License` 
 
