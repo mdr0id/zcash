@@ -141,19 +141,34 @@ Ensure you have successfully installed all system package dependencies as descri
 Configuration
 -------------
 
-Following the steps below will create your zcashd configuration file which can be edited to either connect to `mainnet` or `testnet` as well as applying settings to safely access the RPC interface.
+Following the steps below will create your zcashd configuration file which can be edited to either connect to ``mainnet`` or ``testnet`` as well as applying settings to safely access the RPC interface.
 
-Mainnet
-*******
-
-Create the `~/.zcash` directory and place a configuration file at `~/.zcash/zcash.conf` using the following commands:
+Create the `~/.zcash` directory:
 
 .. code-block:: bash
    
    mkdir -p ~/.zcash
+
+
+Mainnet
+*******
+
+Place a configuration file at `~/.zcash/zcash.conf` using the following commands:
+
+.. code-block:: bash
+
    echo "addnode=mainnet.z.cash" >~/.zcash/zcash.conf
 
-.. note:: Note that this will overwrite any `zcash.conf` settings you may have added from testnet. (If you want to run on testnet, you can retain a `zcash.conf` from testnet.)
+.. note:: Note that this will overwrite any ``zcash.conf`` settings you may have added from testnet. (If you want to run on testnet, you can retain a `zcash.conf` from testnet.)
+
+Example configured for ``mainnet`` :
+
+:fa:`file` ``zcash.conf`` 
+
+.. code-block:: bash
+
+    addnode=mainnet.z.cash
+
 
 Testnet
 *******
@@ -163,9 +178,9 @@ After running the above commands to create the `zcash.conf` file, edit the follo
 	- add the line `testnet=1`
 	- `addnode=testnet.z.cash` instead of `addnode=mainnet.z.cash`
 
-Example `zcash.conf' configured for testnet:
+Example configured for ``testnet``:
 
-:fa:`file`
+:fa:`file` ``zcash.conf`` 
 
 .. code-block:: bash
 
@@ -182,6 +197,52 @@ Now, run zcashd!
    ./src/zcashd
 
 To run it in the background (without the node metrics screen that is normally displayed) use ``./src/zcashd --daemon``.
+
+.. important:: If you are running Zcash for the first time you will need to allow your node to fully sync:
+    
+ .. code-block:: bash
+                                                                                                                                                        
+             :88SX@888@@X8:                    8;     %X        X%     ;8       
+          %%Xt%tt%SSSSS:XXXt@@              X            ::  ::            X    
+        @S;;tt%%%t    ;;::XXXXSX           %               SS               %   
+      .t:::;;%8888    88888tXXXX8;        S                                  S  
+     .%...:::8             8::XXX%;       X                                  X  
+     8888...:t888888X     8t;;::XX8       8                                  8  
+    %888888...:::;:8    :Xttt;;;::X@                                            
+    888888888...:St    8:%%tttt;;;:X       X                                X   
+    88888888888S8    :%;ttt%%tttt;;X        8                              8    
+    %888888888%t    8S:;;;tt%%%ttt;8          :                          :      
+     8t8888888     S8888888Stt%%%t@            ::                      ::       
+     .@tt888@              8;;ttt@;               t                  t          
+      .8ttt8@SSSSS    SXXXX%:;;;X;                  8              8            
+        X8ttt8888%    %88...::X8                      X.        .X              
+          %8@tt88;8888%8888%8X                          :;    ;:                
+             :@888@XXX@888:                                tt                   
+                                                                                
+    Thank you for running a Zcash node!
+    You're helping to strengthen the network and contributing to a social good :)
+
+    In order to ensure you are adequately protecting your privacy when using Zcash,
+    please see <https://z.cash/support/security/>.
+
+            Block height | 319430
+                Connections | 8
+    Network solution rate | 508319381 Sol/s
+
+    You are currently not mining.
+    To enable mining, add 'gen=1' to your zcash.conf and restart.
+
+    Since starting this node 9 minutes, 1 seconds ago:
+    - You have validated 7815 transactions!
+
+    [Press Ctrl+C to exit] [Set 'showmetrics=0' to hide]
+    
+
+.. important:: Notice the integer value ``319430`` after ``Block height`` field, this means your Zcashd is fully sync.
+    Alternatively, if you were *NOT* fully synced your output would look similar to below:
+
+    (insert none-synced node ascii)
+
 
 You should be able to use the RPC after it finishes loading. Here's a quick way to test:
 
@@ -214,6 +275,8 @@ Listing t-addr
    $ ./src/zcash-cli getaddressesbyaccount ""
 
 This should show the address that was just created.
+
+.. warning:: Command is no longer valid. 
 
 Receiving Zcash with a z-addr
 +++++++++++++++++++++++++++++
