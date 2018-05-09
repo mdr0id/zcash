@@ -73,33 +73,33 @@ Installation
 
 Before we begin installing Zcash, we need to get some dependencies for your system.
 
-    - Ubuntu/Debian-based System:
-	  .. code-block:: bash
+UBUNTU/DEBIAN
+	.. code-block:: bash
 	     
-	     sudo apt-get install
-	     build-essential pkg-config libc6-dev m4 g++-multilib
-	     autoconf libtool ncurses-dev unzip git python python-zmq
-	     zlib1g-dev wget curl bsdmainutils automake
+	   sudo apt-get install
+	   build-essential pkg-config libc6-dev m4 g++-multilib
+	   autoconf libtool ncurses-dev unzip git python python-zmq
+	   zlib1g-dev wget curl bsdmainutils automake
 
-    - Fedora-based System:
-	  .. code-block:: bash
+FEDORA
+	.. code-block:: bash
 
-	     sudo dnf install
-	     git pkgconfig automake autoconf ncurses-devel python
-	     python-zmq wget curl gtest-devel gcc gcc-c++ libtool patch
+	   sudo dnf install
+	   git pkgconfig automake autoconf ncurses-devel python
+	   python-zmq wget curl gtest-devel gcc gcc-c++ libtool patch
 
-    - RHEL-based Systems(including Scientific Linux):
-    	- Install devtoolset-3 and autotools-latest (if not previously installed).
-    	- Run ``scl enable devtoolset-3 'scl enable autotools-latest bash'`` and do the remainder of the build in the shell that this starts.
+RHEL (including Scientific Linux):
+    - Install devtoolset-3 and autotools-latest (if not previously installed).
+    - Run ``scl enable devtoolset-3 'scl enable autotools-latest bash'`` and do the remainder of the build in the shell that this starts.
 
-    - Windows (cross-compile)
-        .. note:: As of 5/1/2018 this platform is not fully supported. However, we are actively working to complete the components to support this.
+WINDOWS (cross-compile)
+    .. note:: As of 5/1/2018 this platform is not fully supported. However, we are actively working to complete the components to support this.
     
-    - macOS
-        .. note:: As of 5/1/2018 this platform is not fully supported. However, we are actively working to complete the components to support this.
+MAC
+    .. note:: As of 5/1/2018 this platform is not fully supported. However, we are actively working to complete the components to support this.
     
-    - CentOS 7
-        .. note:: As of 5/1/2018 this platform is not fully supported. However, we are actively working to complete the components to support this.
+CENTOS
+    .. note:: As of 5/1/2018 this platform is not fully supported. However, we are actively working to complete the components to support this.
 
 Next, we need to ensure we have the correct version of ``gcc`` and ``binutils``
 
@@ -243,10 +243,48 @@ To run it in the background (without the node metrics screen that is normally di
 
     [Press Ctrl+C to exit] [Set 'showmetrics=0' to hide]
     
-   Notice the integer value ``319430`` after ``Block height`` field, this means your Zcashd is fully sync.
+   Notice ``319430``, in the above output, after the ``Block height`` field, this means your Zcashd is fully sync.
    Alternatively, if you were *NOT* fully synced your output would look similar to below:
 
-   (insert none-synced node ascii)
+   .. code-block:: bash
+                                                                                  
+             :88SX@888@@X8:                    8;     %X        X%     ;8       
+          %%Xt%tt%SSSSS:XXXt@@              X            ::  ::            X    
+        @S;;tt%%%t    ;;::XXXXSX           %               SS               %   
+      .t:::;;%8888    88888tXXXX8;        S                                  S  
+     .%...:::8             8::XXX%;       X                                  X  
+     8888...:t888888X     8t;;::XX8       8                                  8  
+    %888888...:::;:8    :Xttt;;;::X@                                            
+    888888888...:St    8:%%tttt;;;:X       X                                X   
+    88888888888S8    :%;ttt%%tttt;;X        8                              8    
+    %888888888%t    8S:;;;tt%%%ttt;8          :                          :      
+     8t8888888     S8888888Stt%%%t@            ::                      ::       
+     .@tt888@              8;;ttt@;               t                  t          
+      .8ttt8@SSSSS    SXXXX%:;;;X;                  8              8            
+        X8ttt8888%    %88...::X8                      X.        .X              
+          %8@tt88;8888%8888%8X                          :;    ;:                
+             :@888@XXX@888:                                tt                   
+
+    Thank you for running a Zcash node!
+    You're helping to strengthen the network and contributing to a social good :)
+
+    In order to ensure you are adequately protecting your privacy when using Zcash,
+    please see <https://z.cash/support/security/>.
+
+        Downloading blocks | 319610 / ~320290 (99%)
+                Connections | 6
+    Network solution rate | 389211802 Sol/s
+
+    You are currently not mining.
+    To enable mining, add 'gen=1' to your zcash.conf and restart.
+
+    Since starting this node 59 seconds ago:
+    - You have validated 7144 transactions!
+
+    [Press Ctrl+C to exit] [Set 'showmetrics=0' to hide]
+
+   Notice now how the ``Block height`` field has changed to ``Downloading blocks`` with value ``319610 / ~320290 (99%)``.
+   This indicates that your node is attempting to sync with the current block height.
 
 
 You should be able to use the RPC after it finishes loading. Here's a quick way to test:
