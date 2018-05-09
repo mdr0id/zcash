@@ -1,5 +1,5 @@
-Git
-===
+Git :fa:`code-fork` 
+===================
 
 
 .. toctree::

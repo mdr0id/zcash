@@ -1,7 +1,7 @@
 .. _User-Guide:
 
-User Guide
-==========
+User Guide :fa:`book`
+=====================
 
 About
 -----
@@ -17,10 +17,13 @@ Getting Started
 
 Welcome! This guide is intended to get you running on the official Zcash network. To ensure your Zcash client behaves gracefully throughout the setup process, please check your system meets the following requirements:
 
-	- 64-bit Linux OS
-	- 64-bit Processor
-	- 3GB of free RAM
-	- 10GB of free Disk (*the size of the block chain increases over time*)
+	:fa:`desktop` 64-bit Linux OS
+
+	:fa:`microchip` 64-bit Processor
+
+	:fa:`database` 3GB of free RAM
+    
+	:fa:`hdd-o` 10GB of free Disk (*the size of the block chain increases over time*)
 
 .. note:: Currently we only officially support Linux (Debian), but we are actively investigating development for other operating systems and platforms(e.g. OSX, Ubuntu, Windows, Fedora). 
 
@@ -207,6 +210,7 @@ To run it in the background (without the node metrics screen that is normally di
 .. important:: If you are running Zcash for the first time you will need to allow your node to fully sync:
     
    .. code-block:: bash
+    :emphasize-lines: 24
                                                                                                                                                         
              :88SX@888@@X8:                    8;     %X        X%     ;8       
           %%Xt%tt%SSSSS:XXXt@@              X            ::  ::            X    
@@ -247,7 +251,8 @@ To run it in the background (without the node metrics screen that is normally di
    Alternatively, if you were *NOT* fully synced your output would look similar to below:
 
    .. code-block:: bash
-                                                                                  
+    :emphasize-lines: 24
+                                                                                 
              :88SX@888@@X8:                    8;     %X        X%     ;8       
           %%Xt%tt%SSSSS:XXXt@@              X            ::  ::            X    
         @S;;tt%%%t    ;;::XXXXSX           %               SS               %   

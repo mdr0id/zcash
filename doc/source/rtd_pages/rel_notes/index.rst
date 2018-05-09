@@ -1,6 +1,5 @@
-Release Notes
-=====================
-
+Release Notes :fa:`sticky-note-o`
+=================================
 
 .. toctree::
    :hidden:

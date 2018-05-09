@@ -1,6 +1,5 @@
-Bitcoin Release Notes
-=====================
-
+Bitcoin Release Notes :fa:`bitcoin`
+===================================
 
 .. toctree::
    :hidden:

@@ -1,5 +1,5 @@
-Wiki
-====
+Wiki :fa:`github`
+=================
 
 
 .. toctree::
