@@ -35,7 +35,7 @@ If you are installing Zcash for the first time, please skip to the Important Tem
 Upgrading?
 ----------
 
-If you're on a Debian-based distribution, you can follow the [Debian instructions](https://github.com/zcash/zcash/wiki/Debian-binary-packages) to install zcash on your system. Otherwise, you can update your local snapshot of our code:
+If you're on a Debian-based distribution, you can follow the :ref:`install-debian-bin-packages-guide` to install zcash on your system. Otherwise, you can update your local snapshot of our code:
 
 .. code-block:: bash
 
@@ -52,7 +52,7 @@ If you're on a Debian-based distribution, you can follow the [Debian instruction
 Important Terminology
 ---------------------
 
-Zcash supports two different kinds of addresses, a _z-addr_ (which begins with a **z**) is an address that uses zero-knowledge proofs and other cryptography to protect user privacy. There are also _t-addrs_ (which begin with a **t**) that are similar to Bitcoin's addresses.
+Zcash supports two different kinds of addresses, a ``z-addr`` (which begins with a ``z``) is an address that uses zero-knowledge proofs and other cryptography to protect user privacy. There are also ``t-addrs`` (which begin with a ``t``) that are similar to Bitcoin's addresses.
 
 The interfaces are a commandline client (`zcash-cli`) and a Remote Procedure Call (RPC) interface, which is documented here:
 
@@ -66,7 +66,7 @@ There are a couple options to setup Zcash for the first time.
 
 	1. If you would like to compile Zcash from source, please skip to the Installation section.
 	2. If you would like to install binary packages for Debian-based operating systems:
-	   https://github.com/zcash/zcash/wiki/Debian-binary-packages
+	   :ref:`install-debian-bin-packages-guide`
 
 
 .. _installation:
@@ -132,7 +132,7 @@ Now we need to get the Zcash software from the repository:
    git checkout v1.0.15
    ./zcutil/fetch-params.sh
 
-This will fetch our Sprout proving and verifying keys (the final ones created in the [Parameter Generation Ceremony](https://github.com/zcash/mpc)), and place them into `~/.zcash-params/`. These keys are just under 911MB in size, so it may take some time to download them.
+This will fetch our Sprout proving and verifying keys (the final ones created in the `Parameter Generation Ceremony <https://github.com/zcash/mpc>`_ , and place them into `~/.zcash-params/`. These keys are just under 911MB in size, so it may take some time to download them.
 
 The message printed by ``git checkout`` about a "detached head" is normal and does not indicate a problem.
 
