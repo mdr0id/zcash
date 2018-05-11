@@ -25,6 +25,7 @@ Welcome! This guide is intended to get you running on the official Zcash network
     
 	:fa:`hdd-o` 10GB of free Disk (*the size of the block chain increases over time*)
 
+
 .. note:: Currently we only officially support Linux (Debian), but we are actively investigating development for other operating systems and platforms(e.g. OSX, Ubuntu, Windows, Fedora). 
 
 
@@ -144,6 +145,8 @@ Ensure you have successfully installed all system package dependencies as descri
 .. code-block:: bash
    
    ./zcutil/build.sh -j$(nproc)
+
+.. attention:: If you recieved any errors, from the above command, please check out our :ref:`troubleshooting-guide`
 
 .. note:: This should compile our dependencies and build `zcashd`. (Note: if you don't have `nproc`, then substitute the number of cores on your system. If the build runs out of memory, try again without the `-j` argument, i.e. just `./zcutil/build.sh`.
 
@@ -323,8 +326,6 @@ Listing t-addr
    $ ./src/zcash-cli getaddressesbyaccount ""
 
 This should show the address that was just created.
-
-.. warning:: Command is no longer valid. 
 
 Receiving Zcash with a z-addr
 +++++++++++++++++++++++++++++
