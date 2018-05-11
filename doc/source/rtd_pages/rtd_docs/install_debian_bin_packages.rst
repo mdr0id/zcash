@@ -32,7 +32,7 @@ Finally, update the cache of sources and install Zcash:
    
    sudo apt-get update && sudo apt-get install zcash
 
-Lastly you can run `zcash-fetch-params` to fetch the zero-knowledge parameters, and set up `~/.zcash/zcash.conf` before running Zcash as your local user, as documented in the [User Guide](https://github.com/zcash/zcash/wiki/1.0-User-Guide).
+Lastly you can run ``./zcash-fetch-params`` to fetch the zero-knowledge parameters, and set up `~/.zcash/zcash.conf` before running Zcash as your local user, as documented in the :ref:`User-Guide`. 
 
 Troubleshooting
 ---------------

@@ -17,13 +17,10 @@ Getting Started
 
 Welcome! This guide is intended to get you running on the official Zcash network. To ensure your Zcash client behaves gracefully throughout the setup process, please check your system meets the following requirements:
 
-	:fa:`desktop` 64-bit Linux OS
-
-	:fa:`microchip` 64-bit Processor
-
-	:fa:`database` 3GB of free RAM
-    
-	:fa:`hdd-o` 10GB of free Disk (*the size of the block chain increases over time*)
+	| :fa:`linux` ``64-bit`` Linux OS
+	| :fa:`microchip` ``64-bit`` Processor
+	| :fa:`database` ``3GB`` of free RAM
+	| :fa:`hdd-o` ``10GB`` of free Disk (*the size of the block chain increases over time*)
 
 
 .. note:: Currently we only officially support Linux (Debian), but we are actively investigating development for other operating systems and platforms(e.g. OSX, Ubuntu, Windows, Fedora). 
@@ -65,10 +62,8 @@ Setup
 
 There are a couple options to setup Zcash for the first time.
 
-	1. If you would like to compile Zcash from source, please skip to the Installation section.
-	2. If you would like to install binary packages for Debian-based operating systems:
-	   :ref:`install-debian-bin-packages-guide`
-
+    1. If you would like to install binary packages for Debian-based operating systems, see :ref:`install-debian-bin-packages-guide`
+    2. If you would like to compile Zcash from source, please skip to the Installation section.
 
 .. _installation:
 

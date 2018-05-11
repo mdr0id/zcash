@@ -24,7 +24,7 @@ confidentiality of transaction metadata. For more technical details, please chec
     :fa:`code` :ref:`development_guidelines`
       A set of guidelines and best practices to contribute to the development of Zcash. 
 
-    :fa:`lock` `Security Information page <https://z.cash/support/security/>`_ 
+    :fa:`lock` `Security Information <https://z.cash/support/security/>`_ 
       Zcash is experimental and a work-in-progress. Use at your own risk.
 
     :fa:`file-code-o` Deprecation Policy 
