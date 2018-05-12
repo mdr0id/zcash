@@ -38,6 +38,12 @@ If you're on a Debian-based distribution, you can follow the :ref:`install-debia
 .. code-block:: bash
 
    git fetch origin
+
+| Ensure you get the current release version from :fa:`github` `here <https://github.com/zcash/zcash>`_ .
+| If ``v1.0.15`` was current, issue the following commands:
+
+.. code-block:: bash
+
    git checkout v1.0.15
    ./zcutil/fetch-params.sh
    ./zcutil/build.sh -j$(nproc)
@@ -47,15 +53,6 @@ If you're on a Debian-based distribution, you can follow the :ref:`install-debia
    If you are upgrading from testnet, make sure that your ``~/.zcash`` directory contains only ``zcash.conf`` to start with, and that your `~/.zcash/zcash.conf` does not contain `testnet=1` or `addnode=testnet.z.cash`. 
    If the build fails, move aside your ``zcash`` directory and try again by following the instructions in the :ref:`installation` section below.
 
-Important Terminology
----------------------
-
-Zcash supports two different kinds of addresses, a ``z-addr`` (which begins with a ``z``) is an address that uses zero-knowledge proofs and other cryptography to protect user privacy. There are also ``t-addrs`` (which begin with a ``t``) that are similar to Bitcoin's addresses.
-
-The interfaces are a commandline client (`zcash-cli`) and a Remote Procedure Call (RPC) interface, which is documented here:
-
-https://github.com/zcash/zcash/blob/v1.0.15/doc/payment-api.md
-
 
 Setup
 -----
@@ -63,7 +60,7 @@ Setup
 There are a couple options to setup Zcash for the first time.
 
     1. If you would like to install binary packages for Debian-based operating systems, see :ref:`install-debian-bin-packages-guide`
-    2. If you would like to compile Zcash from source, please skip to the Installation section.
+    2. If you would like to compile Zcash from source, please continue to the Installation section.
 
 .. _installation:
 
@@ -302,6 +299,15 @@ Using Zcash
 ***********
 
 First, you want to obtain Zcash. You can purchase them from an exchange, from other users, or sell goods and services for them! Exactly how to obtain Zcash (safely) is not in scope for this document, but you should be careful. Avoid scams!
+
+.. important:: Terminology
+
+   Zcash supports two different kinds of addresses, a ``z-addr`` (which begins with a ``z``) is an address that uses zero-knowledge proofs and other cryptography to protect user privacy. There are also ``t-addrs`` (which begin with a ``t``) that are similar to Bitcoin's addresses.
+
+   The interfaces are a commandline client (`zcash-cli`) and a Remote Procedure Call (RPC) interface, which is documented here:
+
+   https://github.com/zcash/zcash/blob/v1.0.15/doc/payment-api.md
+
 
 Generating a t-addr
 +++++++++++++++++++
