@@ -28,7 +28,7 @@ Welcome! This guide is intended to get you running on the official Zcash network
 
 Please let us know if you run into snags. We plan to make it less memory/CPU intensive and support more architectures and operating systems in the future.
 
-If you are installing Zcash for the first time, please skip to the Important Teminology section. Otherwise, the below upgrading section will provide information to update your current Zcash environment.
+If you are installing Zcash for the first time, please skip to the :ref:`Installation` section. Otherwise, the below upgrading section will provide information to update your current Zcash environment.
 
 Upgrading?
 ----------
@@ -39,7 +39,7 @@ If you're on a Debian-based distribution, you can follow the :ref:`install-debia
 
    git fetch origin
 
-| Ensure you get the current release version from :fa:`github` `here <https://github.com/zcash/zcash>`_ .
+| Ensure you check the current release version from :fa:`github` `here <https://github.com/zcash/zcash>`_ .
 | If ``v1.0.15`` was current, issue the following commands:
 
 .. code-block:: bash
@@ -48,9 +48,9 @@ If you're on a Debian-based distribution, you can follow the :ref:`install-debia
    ./zcutil/fetch-params.sh
    ./zcutil/build.sh -j$(nproc)
 
-.. note:: If you don't have `nproc`, then substitute the number of cores on your system. 
-   If the build runs out of memory, try again without the `-j` argument, i.e. just `./zcutil/build.sh`. 
-   If you are upgrading from testnet, make sure that your ``~/.zcash`` directory contains only ``zcash.conf`` to start with, and that your `~/.zcash/zcash.conf` does not contain `testnet=1` or `addnode=testnet.z.cash`. 
+.. note:: If you don't have ``nproc``, then substitute the number of cores on your system. 
+   If the build runs out of memory, try again without the ``-j`` argument, i.e. just ``./zcutil/build.sh``. 
+   If you are upgrading from testnet, make sure that your ``~/.zcash`` directory contains only ``zcash.conf`` to start with, and that your ``~/.zcash/zcash.conf`` does not contain ``testnet=1`` or ``addnode=testnet.z.cash``. 
    If the build fails, move aside your ``zcash`` directory and try again by following the instructions in the :ref:`installation` section below.
 
 
@@ -60,7 +60,7 @@ Setup
 There are a couple options to setup Zcash for the first time.
 
     1. If you would like to install binary packages for Debian-based operating systems, see :ref:`install-debian-bin-packages-guide`
-    2. If you would like to compile Zcash from source, please continue to the Installation section.
+    2. If you would like to compile Zcash from source, please continue to the :ref:`Installation` section.
 
 .. _installation:
 
@@ -84,7 +84,7 @@ FEDORA
 	   git pkgconfig automake autoconf ncurses-devel python
 	   python-zmq wget curl gtest-devel gcc gcc-c++ libtool patch
 
-RHEL (including Scientific Linux):
+RHEL (including Scientific Linux)
     - Install devtoolset-3 and autotools-latest (if not previously installed).
     - Run ``scl enable devtoolset-3 'scl enable autotools-latest bash'`` and do the remainder of the build in the shell that this starts.
 
@@ -99,22 +99,23 @@ CENTOS
 
 Next, we need to ensure we have the correct version of ``gcc`` and ``binutils``
 
-	1. gcc/g++ 4.9 *or later* is required. 
-	   Zcash has been successfully built using gcc/g++ versions 4.9 to 7.x inclusive. 
+    1. gcc/g++ 4.9 *or later* is required. 
+        
+        Zcash has been successfully built using gcc/g++ versions 4.9 to 7.x inclusive. 
 
-	   Use ``g++ --version`` to check which version you have.
+        Use ``g++ --version`` to check which version you have.
 
-	   On Ubuntu Trusty, if your version is too old then you can install gcc/g++ 4.9 as follows:
+        On Ubuntu Trusty, if your version is too old then you can install gcc/g++ 4.9 as follows:
 
-	   .. code-block:: bash
+	    .. code-block:: bash
 
    		  $ sudo add-apt-repository ppa:ubuntu-toolchain-r/test
    	 	  $ sudo apt-get update
    		  $ sudo apt-get install g++-4.9
 
-   	2. binutils 2.22 *or later* is required. 
+    2. binutils 2.22 *or later* is required. 
 
-	   Use ``as --version`` to check which version you have, and upgrade if necessary.
+        Use ``as --version`` to check which version you have, and upgrade if necessary.
 
 Now we need to get the Zcash software from the repository:
 
@@ -125,7 +126,7 @@ Now we need to get the Zcash software from the repository:
    git checkout v1.0.15
    ./zcutil/fetch-params.sh
 
-This will fetch our Sprout proving and verifying keys (the final ones created in the `Parameter Generation Ceremony <https://github.com/zcash/mpc>`_ , and place them into `~/.zcash-params/`. These keys are just under 911MB in size, so it may take some time to download them.
+This will fetch our Sprout proving and verifying keys (the final ones created in the `Parameter Generation Ceremony <https://github.com/zcash/mpc>`_ , and place them into ``~/.zcash-params/``. These keys are just under 911MB in size, so it may take some time to download them.
 
 The message printed by ``git checkout`` about a "detached head" is normal and does not indicate a problem.
 
@@ -140,7 +141,7 @@ Ensure you have successfully installed all system package dependencies as descri
 
 .. attention:: If you recieved any errors, from the above command, please check out our :ref:`troubleshooting-guide`
 
-.. note:: This should compile our dependencies and build `zcashd`. (Note: if you don't have `nproc`, then substitute the number of cores on your system. If the build runs out of memory, try again without the `-j` argument, i.e. just `./zcutil/build.sh`.
+.. note:: This should compile our dependencies and build ``zcashd``. (Note: if you don't have ``nproc``, then substitute the number of cores on your system. If the build runs out of memory, try again without the ``-j`` argument, i.e. just ``./zcutil/build.sh``.
 
 Configuration
 -------------
@@ -179,8 +180,8 @@ Testnet
 
 After running the above commands to create the `zcash.conf` file, edit the following parameters in your `zcash.conf` file to indicate network and node discovery for `testnet`:
 
-	- add the line `testnet=1`
-	- `addnode=testnet.z.cash` instead of `addnode=mainnet.z.cash`
+	- add the line **testnet=1**
+	- **addnode=testnet.z.cash** instead of **addnode=mainnet.z.cash**
 
 Example configured for ``testnet``:
 
@@ -287,7 +288,9 @@ To run it in the background (without the node metrics screen that is normally di
    This indicates that your node is attempting to sync with the current block height.
 
 
-You should be able to use the RPC after it finishes loading. Here's a quick way to test:
+You should be able to use the RPC after it finishes syncing. If you are running ``zcashd`` in the background, issue the below command to test:
+
+*( If you did not run zcashd in the background, you will need to open a new terminal)*
 
 .. code-block:: bash
    
