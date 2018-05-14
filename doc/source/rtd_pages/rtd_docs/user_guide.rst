@@ -72,16 +72,16 @@ Before we begin installing Zcash, we need to get some dependencies for your syst
 UBUNTU/DEBIAN
 	.. code-block:: bash
 	     
-	   sudo apt-get install
-	   build-essential pkg-config libc6-dev m4 g++-multilib
-	   autoconf libtool ncurses-dev unzip git python python-zmq
+	   sudo apt-get install \
+	   build-essential pkg-config libc6-dev m4 g++-multilib \
+	   autoconf libtool ncurses-dev unzip git python python-zmq \
 	   zlib1g-dev wget curl bsdmainutils automake
 
 FEDORA
 	.. code-block:: bash
 
-	   sudo dnf install
-	   git pkgconfig automake autoconf ncurses-devel python
+	   sudo dnf install \
+	   git pkgconfig automake autoconf ncurses-devel python \
 	   python-zmq wget curl gtest-devel gcc gcc-c++ libtool patch
 
 RHEL (including Scientific Linux)
