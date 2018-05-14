@@ -85,29 +85,19 @@ License
    :caption: Documents
    :hidden:
 
-   rtd_pages/rtd_docs/user_guide.rst
+   /rtd_pages/rtd_docs/user_guide.rst
 
 .. toctree::
-   :caption: Git
+   :caption: Zcash Improvement Proposals
+   :hidden:
+
+   /rtd_pages/zips/index.rst
+
+.. toctree::
+   :caption: Archive
    :hidden:
 
    /rtd_pages/archive_git/index
-
-.. toctree::
-   :caption: Wiki
-   :hidden:
-
    /rtd_pages/archive_wiki/index
-
-.. toctree::
-   :caption: Bitcoin Release Notes
-   :hidden:
-
    /rtd_pages/bitcoin_rel_notes/index
-
-.. toctree::
-   :caption: Release Notes
-   :hidden:
-   :glob:
-
    /rtd_pages/rel_notes/index

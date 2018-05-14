@@ -1,7 +1,7 @@
 .. _User-Guide:
 
-User Guide :fa:`book`
-=====================
+User Guide
+==========
 
 About
 -----
