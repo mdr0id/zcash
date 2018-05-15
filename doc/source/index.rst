@@ -84,13 +84,9 @@ License
 .. toctree::
    :caption: Documents
    :hidden:
+   :titlesonly:
 
    /rtd_pages/rtd_docs/user_guide.rst
-
-.. toctree::
-   :caption: Zcash Improvement Proposals
-   :hidden:
-
    /rtd_pages/zips/index.rst
 
 .. toctree::

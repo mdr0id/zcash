@@ -309,7 +309,7 @@ First, you want to obtain Zcash. You can purchase them from an exchange, from ot
 
    The interfaces are a commandline client (`zcash-cli`) and a Remote Procedure Call (RPC) interface, which is documented here:
 
-   https://github.com/zcash/zcash/blob/v1.0.15/doc/payment-api.md
+   :ref:`payment_api`
 
 
 Generating a t-addr
@@ -411,7 +411,7 @@ Additional operations for zcash-cli
 
 As Zcash is an extension of bitcoin, zcash-cli supports all commands that are part of the Bitcoin Core API (as of version 0.11.2), https://en.bitcoin.it/wiki/Original_Bitcoin_client/API_calls_list
 
-For a full list of new commands that are not part of bitcoin API (mostly addressing operations on z-addrs) see https://github.com/zcash/zcash/blob/master/doc/payment-api.md
+For a full list of new commands that are not part of bitcoin API (mostly addressing operations on z-addrs) see :ref:`payment_api`
 
 To list all zcash commands:
 
@@ -432,7 +432,7 @@ To get help with a particular command:
    security issues known to affect that release. You can find the most
    recent version of this document here:
 
-   https://github.com/zcash/zcash/blob/master/doc/security-warnings.md
+   :ref:`security_warnings`
 
    Please also see our security page for recent notifications and other
    resources:
