@@ -84,7 +84,6 @@ License
 .. toctree::
    :caption: Documents
    :hidden:
-   :titlesonly:
 
    /rtd_pages/rtd_docs/user_guide.rst
    /rtd_pages/zips/index.rst

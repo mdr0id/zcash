@@ -303,13 +303,17 @@ Using Zcash
 
 First, you want to obtain Zcash. You can purchase them from an exchange, from other users, or sell goods and services for them! Exactly how to obtain Zcash (safely) is not in scope for this document, but you should be careful. Avoid scams!
 
-.. important:: Terminology
+.. important:: **Terminology**
 
    Zcash supports two different kinds of addresses, a ``z-addr`` (which begins with a ``z``) is an address that uses zero-knowledge proofs and other cryptography to protect user privacy. There are also ``t-addrs`` (which begin with a ``t``) that are similar to Bitcoin's addresses.
 
    The interfaces are a commandline client (`zcash-cli`) and a Remote Procedure Call (RPC) interface, which is documented here:
 
    :ref:`payment_api`
+
+.. attention:: **Wallet Backup**
+   
+   To ensure you have properly backup your wallet, we **strongly** encourage you to review the :ref:`wallet_backup` .
 
 
 Generating a t-addr
