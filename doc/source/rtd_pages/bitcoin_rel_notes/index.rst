@@ -2,7 +2,7 @@ Bitcoin Release Notes :fa:`bitcoin`
 ===================================
 
 .. toctree::
-   :hidden:
+   :titlesonly:
    :glob:
 
    /rtd_pages/bitcoin_rel_notes/*

@@ -1,8 +1,8 @@
 Release Notes :fa:`file-text-o`
 ===============================
 
+
 .. toctree::
-   :hidden:
    :titlesonly:
    :maxdepth: 2
    :glob:

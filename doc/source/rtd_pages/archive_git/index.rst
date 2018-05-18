@@ -3,9 +3,7 @@ Git :fa:`code-fork`
 
 
 .. toctree::
-   :hidden:
    :titlesonly:
-   :maxdepth: 2
 
    /rtd_pages/archive_git/amqp.rst
    /rtd_pages/archive_git/authors.rst
