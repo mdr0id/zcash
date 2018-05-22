@@ -44,17 +44,17 @@ z_getbalance_ , z_gettotalbalance_
 
 :fa:`address-book` Addresses_
 
-z_getnewaddress_ , z_listaddresses_ , z_validateaddress , z_exportviewingkey , z_importviewingkey
+z_getnewaddress_ , z_listaddresses_ , z_validateaddress_ , z_exportviewingkey_ , z_importviewingkey_
 
-:fa:`key` Keys
+:fa:`key` Key_Management_
 
-z_exportkey , z_importkey , z_exportwallet , z_importwallet
+z_exportkey_ , z_importkey_ , z_exportwallet_ , z_importwallet_
 
-:fa:`calculator` Operation
+:fa:`calculator` Operation_
 
 z_getoperationresult, z_getoperationstatus, z_listoperationids
 
-:fa:`barcode` Payment
+:fa:`barcode` Payment_
 
 z_listreceivedbyaddress, z_listunspent, z_sendmany, z_shieldcoinbase
 
@@ -142,35 +142,127 @@ Addresses
 |                      |                     |        Vradpjk3njLcS2fuxCFGJtLjkUfKjYop1URXabDy5A7U3"                             |                                                           
 |                      |                     |   ]                                                                               |
 +----------------------+---------------------+-----------------------------------------------------------------------------------+
+|.. _z_validateaddress:| zaddr               | Return information about a given zaddr                                            |
+|                      |                     |                                                                                   |
+|z_validateaddress     |                     +-----------------------------------------------------------------------------------+
+|                      |                     | | ``zcash-cli z_validateaddress zcbcb6XnP8hbV5y6ZwsY``                            |
+|                      |                     | | ``BG7AxaU6xicfKkuJ5ZtFEJkcGL2jUxiW145big239XFJ6CLu``                            |
+|                      |                     | | ``VeSMD5BQ9doGK5P3FVkQTeoabCG``                                                 |
+|                      |                     |                                                                                   |
+|                      |                     |.. code-block:: json                                                               |
+|                      |                     |                                                                                   |
+|                      |                     |   {                                                                               |
+|                      |                     |      "isvalid": true,                                                             |
+|                      |                     |      "address": "zcbcb6XnP8hbV5y6ZwsYBG7AxaU6xicfK                                |
+|                      |                     |                  kuJ5ZtFEJkcGL2jUxiW145big239XFJ6C                                |
+|                      |                     |                  LuVeSMD5BQ9doGK5P3FVkQTeoabCG",                                  |
+|                      |                     |      "payingkey": "b4ae837201504154673313e6eb011ca                                |
+|                      |                     |                    fabe14f3825f06c6ba55272b07add57d1",                            |
+|                      |                     |      "payingkey": "b4ae837201504154673313e6eb011cafa                              |
+|                      |                     |                     be14f3825f06c6ba55272b07add57d1",                             |  
+|                      |                     |      "ismine": true                                                               |
+|                      |                     |   }                                                                               |
++----------------------+---------------------+-----------------------------------------------------------------------------------+
 
+.. _Key_Management:
 
-<br><br>Output:<br>{ [“z123…”, “z456...”, “z789...”] }
-z_validateaddress | zaddr | Return information about a given zaddr.<br><br>Output:<br>{"isvalid" : true,<br>"address" : "zcWsmq...",<br>"payingkey" : "f5bb3c...",<br>"transmissionkey" : "7a58c7...",<br>"ismine" : true}
+Key Management
+~~~~~~~~~~~~~~
 
-### Key Management
++-----------------------+---------------------+-----------------------------------------------------------------------------------+
+|**Command**            | **Parameters**      | **Description**                                                                   |
++-----------------------+---------------------+-----------------------------------------------------------------------------------+
+|.. _z_exportkey:       | zaddr               | | Requires an unlocked wallet or an unencrypted wallet.                           |
+|                       |                     | | Return a zkey for a given zaddr belonging to the node’s                         |
+|z_exportkey            |                     | | wallet.  The key will be returned as a string formatted                         |
+|                       |                     | | using Base58Check as described in the Zcash protocol spec.                      |
+|                       |                     |                                                                                   |
+|                       |                     +-----------------------------------------------------------------------------------+
+|                       |                     |``zcash-cli z_exportkey``                                                          |
+|                       |                     |                                                                                   |
+|                       |                     |.. code-block:: json                                                               |
+|                       |                     |                                                                                   |
+|                       |                     |   AKWUAkypwQjhZ6LLNaMuuuLcmZ6gt5UFyo8m3jGutvALmwZKLdR5                            |
+|                       |                     |                                                                                   |
++-----------------------+---------------------+-----------------------------------------------------------------------------------+
+|.. _z_importkey:       | zkey [rescan=true]  | | Wallet must be unlocked. Add a zkey as returned by                              |
+|                       |                     | | z_exportkey to a node's wallet. The key should be                               |
+|z_importkey            |                     | | formatted using Base58Check as described in the Zcash                           |
+|                       |                     | | protocol spec. Set rescan to true (the default) to rescan                       |
+|                       |                     | | the entire local block database  for transactions affecting                     |
+|                       |                     | | any address or pubkey script in the wallet (including                           |
+|                       |                     | | transactions affecting the newly-added address for this                         |
+|                       |                     | | spending key).                                                                  |
+|                       |                     |                                                                                   |
+|                       |                     +-----------------------------------------------------------------------------------+
+|                       |                     |``zcash-cli z_importkey``                                                          |
+|                       |                     |                                                                                   |
+|                       |                     |                                                                                   |
++-----------------------+---------------------+-----------------------------------------------------------------------------------+
+|.. _z_exportwallet:    | filename            | | Requires an unlocked wallet or an unencrypted wallet.                           |
+|                       |                     | | Creates or overwrites a file with taddr private keys                            |
+|z_exportwallet         |                     | | and zaddr private keys in a human-readable format.                              |
+|                       |                     | | Filename is the file in which the wallet dump will be                           |
+|                       |                     | | placed. May be prefaced by an absolute file path. An                            |
+|                       |                     | | existing file with that name will be overwritten. No                            |
+|                       |                     | | value is returned but a JSON-RPC error will be reported                         |
+|                       |                     | | if a failure occurred.                                                          |
+|                       |                     |                                                                                   |
+|                       |                     +-----------------------------------------------------------------------------------+
+|                       |                     |``zcash-cli z_exportwallet wallet_out.file``                                       |
+|                       |                     |                                                                                   |
+|                       |                     |                                                                                   |
++-----------------------+---------------------+-----------------------------------------------------------------------------------+
+|.. _z_importwallet:    | filename            | | Requires an unlocked wallet or an unencrypted wallet.                           |
+|                       |                     | | Imports private keys from a file in wallet export file                          |
+|z_importwallet         |                     | | format (see z_exportwallet). These keys will be added                           |
+|                       |                     | | to the keys currently in the wallet. This call may need                         |
+|                       |                     | | to rescan all or parts of the block chain for transactions                      |
+|                       |                     | | affecting the newly-added keys, which may take several                          |
+|                       |                     | | minutes.Filename is the file to import. The path is                             |
+|                       |                     | | relative to zcashd’s working directory. No value is returned                    |
+|                       |                     | | but a JSON-RPC error will be reported if a failure occurred.                    |
+|                       |                     |                                                                                   |
+|                       |                     +-----------------------------------------------------------------------------------+
+|                       |                     |``zcash-cli z_importwallet wallet_in.file``                                        |
+|                       |                     |                                                                                   |
+|                       |                     |                                                                                   |
++-----------------------+---------------------+-----------------------------------------------------------------------------------+
+|.. _z_exportviewingkey:| zaddr               | | Reveals the viewing key corresponding to 'zaddr'. Then                          |
+|                       |                     | | the z_importviewingkey can be used with this output.                            |
+|z_exportviewingkey     |                     |                                                                                   |
+|                       |                     +-----------------------------------------------------------------------------------+
+|                       |                     |``zcash-cli z_exportviewkey``                                                      |
+|                       |                     |                                                                                   |
+|                       |                     |                                                                                   |
++-----------------------+---------------------+-----------------------------------------------------------------------------------+
+|.. _z_importviewingkey:| | vkey              | | Adds a viewing key (as returned by z_exportviewingkey) to                       |
+|                       |[rescan=whenkeyisnew]| | your wallet.                                                                    |
+|z_importviewingkey     |[startHeight=0]      |                                                                                   |
+|                       |                     +-----------------------------------------------------------------------------------+
+|                       |                     |``zcash-cli z_importviewingkey``                                                   |
+|                       |                     |                                                                                   |
+|                       |                     |                                                                                   |
++-----------------------+---------------------+-----------------------------------------------------------------------------------+
 
-+--------+------------+------------+
-|Command | Parameters | Description|
-+--------+------------+------------+
-z_exportkey | zaddr | _Requires an unlocked wallet or an unencrypted wallet._<br><br>Return a zkey for a given zaddr belonging to the node’s wallet.<br><br>The key will be returned as a string formatted using Base58Check as described in the Zcash protocol spec.<br><br>Output:AKWUAkypwQjhZ6LLNaMuuuLcmZ6gt5UFyo8m3jGutvALmwZKLdR5
-z_importkey | zkey [rescan=true] | _Wallet must be unlocked._<br><br>Add a zkey as returned by z_exportkey to a node's wallet.<br><br>The key should be formatted using Base58Check as described in the Zcash protocol spec.<br><br>Set rescan to true (the default) to rescan the entire local block database for transactions affecting any address or pubkey script in the wallet (including transactions affecting the newly-added address for this spending key).
-z_exportwallet | filename | _Requires an unlocked wallet or an unencrypted wallet._<br><br>Creates or overwrites a file with taddr private keys and zaddr private keys in a human-readable format.<br><br>Filename is the file in which the wallet dump will be placed. May be prefaced by an absolute file path. An existing file with that name will be overwritten.<br><br>No value is returned but a JSON-RPC error will be reported if a failure occurred.
-z_importwallet | filename | _Requires an unlocked wallet or an unencrypted wallet._<br><br>Imports private keys from a file in wallet export file format (see z_exportwallet). These keys will be added to the keys currently in the wallet. This call may need to rescan all or parts of the block chain for transactions affecting the newly-added keys, which may take several minutes.<br><br>Filename is the file to import. The path is relative to zcashd’s working directory.<br><br>No value is returned but a JSON-RPC error will be reported if a failure occurred.
-z_exportviewingkey | zaddr | Reveals the viewing key corresponding to 'zaddr'. Then the z_importviewingkey can be used with this output.
-z_importviewingkey | vkey [rescan=whenkeyisnew] [startHeight=0] | Adds a viewing key (as returned by z_exportviewingkey) to your wallet.
+.. _Payment:
 
+Payment
+~~~~~~~
 
-### Payment
-
-+--------+------------+------------+
-|Command | Parameters | Description|
-+--------+------------+------------+
++----------------------+---------------------+-----------------------------------------------------------------------------------+
+|**Command**           | **Parameters**      | **Description**                                                                   |
++----------------------+---------------------+-----------------------------------------------------------------------------------+
 z_listreceivedbyaddress<br> | zaddr [minconf=1] | Return a list of amounts received by a zaddr belonging to the node’s wallet.<br><br>Optionally set the minimum number of confirmations which a received amount must have in order to be included in the result.  Use 0 to count unconfirmed transactions.<br><br>Output:<br>[{<br>“txid”: “4a0f…”,<br>“amount”: 0.54,<br>“memo”:”F0FF…”,}, {...}, {...}<br>]
 z_listunspent | [minconf=1] [maxconf=9999999] [includeWatchonly=false] [zaddrs] | Returns array of unspent shielded notes with between minconf and maxconf (inclusive) confirmations.<br><br>Optionally filter to only include notes sent to specified addresses.<br><br>When minconf is 0, unspent notes with zero confirmations are returned, even though they are not immediately spendable.<br><br>Results are an array of Objects, each of which has: {txid, jsindex, jsoutindex, confirmations, address, amount, memo}
 z_sendmany<br> | fromaddress amounts [minconf=1] [fee=0.0001] | _This is an Asynchronous RPC call_<br><br>Send funds from an address to multiple outputs.  The address can be either a taddr or a zaddr.<br><br>Amounts is a list containing key/value pairs corresponding to the addresses and amount to pay.  Each output address can be in taddr or zaddr format.<br><br>When sending to a zaddr, you also have the option of attaching a memo in hexadecimal format.<br><br>**NOTE:**When sending coinbase funds to a zaddr, the node's wallet does not allow any change. Put another way, spending a partial amount of a coinbase utxo is not allowed. This is not a consensus rule but a local wallet rule due to the current implementation of z_sendmany. In future, this rule may be removed.<br><br>Example of Outputs parameter:<br>[{“address”:”t123…”, “amount”:0.005},<br>,{“address”:”z010…”,”amount”:0.03, “memo”:”f508af…”}]<br><br>Optionally set the minimum number of confirmations which a private or transparent transaction must have in order to be used as an input.  When sending from a zaddr, minconf must be greater than zero.<br><br>Optionally set a transaction fee, which by default is 0.0001 ZEC.<br><br>Any transparent change will be sent to a new transparent address.  Any private change will be sent back to the zaddr being used as the source of funds.<br><br>Returns an operationid.  You use the operationid value with z_getoperationstatus and z_getoperationresult to obtain the result of sending funds, which if successful, will be a txid.
 z_shieldcoinbase<br> | fromaddress toaddress [fee=0.0001] [limit=50] | _This is an Asynchronous RPC call_<br><br>Shield transparent coinbase funds by sending to a shielded z address.  Utxos selected for shielding will be locked.  If there is an error, they are unlocked.  The RPC call `listlockunspent` can be used to return a list of locked utxos.<br><br>The number of coinbase utxos selected for shielding can be set with the limit parameter, which has a default value of 50.  If the parameter is set to 0, the number of utxos selected is limited by the `-mempooltxinputlimit` option.  Any limit is constrained by a consensus rule defining a maximum transaction size of 100000 bytes.  <br><br>The from address is a taddr or "*" for all taddrs belonging to the wallet.  The to address is a zaddr. The default fee is 0.0001.<br><br>Returns an object containing an operationid which can be used with z_getoperationstatus and z_getoperationresult, along with key-value pairs regarding how many utxos are being shielded in this transaction and what remains to be shielded.
 
-### Operations
+
+.. _Operations:
+
+Operations
+~~~~~~~~~~
 
 Asynchronous calls return an OperationStatus object which is a JSON object with the following defined key-value pairs:
 
@@ -195,9 +287,30 @@ Currently, as soon as you retrieve the operation status for an operation which h
 
 It is currently not possible to cancel operations.
 
-Command | Parameters | Description
---- | --- | ---
-z_getoperationresult <br>| [operationids] | Return OperationStatus JSON objects for all completed operations the node is currently aware of, and then remove the operation from memory.<br><br>Operationids is an optional array to filter which operations you want to receive status objects for.<br><br>Output is a list of operation status objects, where the status is either "failed", "cancelled" or "success".<br>[<br>{“operationid”: “opid-11ee…”,<br>“status”: “cancelled”},<br>{“operationid”: “opid-9876”, “status”: ”failed”},<br>{“operationid”: “opid-0e0e”,<br>“status”:”success”,<br>“execution_time”:”25”,<br>“result”: {“txid”:”af3887654…”,...}<br>},<br>]<br><br> Examples:<br>zcash-cli z_getoperationresult '["opid-8120fa20-5ee7-4587-957b-f2579c2d882b"]'<br> zcash-cli z_getoperationresult
++-------------------------+---------------------+-----------------------------------------------------------------------------------+
+|**Command**              | **Parameters**      | **Description**                                                                   |
++-------------------------+---------------------+-----------------------------------------------------------------------------------+
+|.. _z_getoperationresult:| [operationids]      | | Return OperationStatus JSON objects for all completed                           |
+|                         |                     | | operations the node is currently aware of, and then                             |
+|z_getoperationresult     |                     | | remove the operation from memory.<br><br>Operationids                           |
+|                         |                     | | is an optional array to filter which operations you want                        |
+|                         |                     | | to receive status objects for. Output is a list of                              |
+|                         |                     | | operation status objects, where the status is either                            |
+|                         |                     | | "failed", "cancelled" or "success".                                             |
+|                         |                     |                                                                                   |
+|                         |                     +-----------------------------------------------------------------------------------+
+|                         |                     |``zcash-cli z_getoperationresult``                                                 |
+|                         |                     |  {“operationid”: “opid-11ee…”,<br>“status”: “cancelled”},                         |
+|                         |                     |  {“operationid”: “opid-9876”, “status”: ”failed”},                                |
+|                         |                     |  {“operationid”: “opid-0e0e”,<br>“status”:”success”,                              |
+|                         |                     |  “execution_time”:”25”,<br>“result”: {“txid”:”af3887654…”,...}<br>},<br>]<br><br> |
+|                         |                     |  Examples:<br>zcash-cli z_getoperationresult                                      |
+|                         |                     | '["opid-8120fa20-5ee7-4587-957b-f2579c2d882b"]'<br> zcash-cli z_getoperationresult|
++-------------------------+---------------------+-----------------------------------------------------------------------------------+
+
+
+
+
 z_getoperationstatus <br>| [operationids] | Return OperationStatus JSON objects for all operations the node is currently aware of.<br><br>Operationids is an optional array to filter which operations you want to receive status objects for.<br><br>Output is a list of operation status objects.<br>[<br>{“operationid”: “opid-12ee…”,<br>“status”: “queued”},<br>{“operationid”: “opd-098a…”, “status”: ”executing”},<br>{“operationid”: “opid-9876”, “status”: ”failed”}<br>]<br><br>When the operation succeeds, the status object will also include the result.<br><br>{“operationid”: “opid-0e0e”,<br>“status”:”success”,<br>“execution_time”:”25”,<br>“result”: {“txid”:”af3887654…”,...}<br>}
 z_listoperationids <br>| [state] | Return a list of operationids for all operations which the node is currently aware of.<br><br>State is an optional string parameter to filter the operations you want listed by their state.  Acceptable parameter values are ‘queued’, ‘executing’, ‘success’, ‘failed’, ‘cancelled’.<br><br>[“opid-0e0e…”, “opid-1af4…”, … ]
 
