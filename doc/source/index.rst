@@ -18,7 +18,7 @@ confidentiality of transaction metadata. For more technical details, please chec
 
 **Before you get started with Zcash, please review the important items below:**
     
-    :fa:`user-circle` :ref:`code-of-conduct`
+    :fa:`user-circle` :ref:`code_of_conduct`
       This project adheres to our Code of Conduct. By participating, you are expected to uphold this code.
 
     :fa:`code` :ref:`development_guidelines`
@@ -38,7 +38,7 @@ confidentiality of transaction metadata. For more technical details, please chec
 Getting Started
 ---------------
 
-For information on Zcash setup, upgrade, installation, build, configuration, and usage please see the :ref:`User-Guide`.
+For information on Zcash setup, upgrade, installation, build, configuration, and usage please see the :ref:`user_guide`.
 
 .. _help:
 
@@ -74,7 +74,7 @@ Answers to common questions from our users can be found in the `FAQ <https://z.c
     :fa:`magic` `Zcash-Wizards <https://chat.zcashcommunity.com/channel/zcash-wizards>`_
       Mad scientist brainstorming
 
-.. _lics:
+.. _License:
 
 License
 -------
@@ -85,15 +85,15 @@ License
    :caption: Documents
    :hidden:
 
-   /rtd_pages/rtd_docs/user_guide.rst
-   /rtd_pages/zips/index.rst
-   /rtd_pages/rtd_docs/payment_api.rst
+   rtd_pages/rtd_docs/user_guide.rst
+   rtd_pages/rtd_docs/index_zips.rst
+   rtd_pages/rtd_docs/payment_api.rst
 
-.. toctree::
-   :caption: Archive
-   :hidden:
+.. .. toctree::
+..   :caption: Archive
+..   :hidden:
 
-   /rtd_pages/archive_git/index
-   /rtd_pages/archive_wiki/index
-   /rtd_pages/bitcoin_rel_notes/index
-   /rtd_pages/rel_notes/index
+..   rtd_pages/archive_git/index
+..   rtd_pages/archive_wiki/index
+..   rtd_pages/bitcoin_rel_notes/index
+..   rtd_pages/rel_notes/index_rel_notes.rst

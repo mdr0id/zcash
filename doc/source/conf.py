@@ -12,10 +12,11 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-#import os
-#import sys
-#sys.path.insert(0, os.path.abspath('extensions'))
+import os
+import sys
 import sphinx_fontawesome
+#sys.path.insert(0, os.path.abspath('extensions'))
+
 
 
 # -- Project information -----------------------------------------------------
@@ -29,8 +30,6 @@ version = u''
 # The full version, including alpha/beta/rc tags
 release = u'1.0.15'
 
-
-#import sphinx_fontawesome
 # -- General configuration ---------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
@@ -61,12 +60,18 @@ master_doc = 'index'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
+#locale_dirs = ['locale/']   # path is example but recommended.
+#gettext_compact = False     # optional.
 language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path .
-exclude_patterns = []
+exclude_patterns = ['rtd_pages/rel_notes/*.rst',
+                    'rtd_pages/bitcoin_rel_notes/*.rst',
+                    'rtd_pages/archive_git/*.rst',
+                    'rtd_pages/archive_wiki/*.rst',
+                    'rtd_pages/rtd_docs/zips/*.rst']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
@@ -99,6 +104,10 @@ html_static_path = ['nstatic']
 # 'searchbox.html']``.
 #
 # html_sidebars = {}
+
+#local_dirs = ['locale/']
+#gettext_compact = False
+
 
 
 # -- Options for HTMLHelp output ---------------------------------------------

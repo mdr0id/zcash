@@ -50,7 +50,7 @@ z_getnewaddress_ , z_listaddresses_ , z_validateaddress_ , z_exportviewingkey_ ,
 
 z_exportkey_ , z_importkey_ , z_exportwallet_ , z_importwallet_
 
-:fa:`calculator` Operation_
+:fa:`calculator` Operations_
 
 z_getoperationresult_ , z_getoperationstatus_ , z_listoperationids_
 
@@ -92,7 +92,7 @@ Accounting
 |                      |                     +-----------------------------------------------------------------------------------+ 
 |                      |                     |``zcash-cli z_gettotalbalance``                                                    |
 |                      |                     |                                                                                   |
-|                      |                     |.. code-block:: json                                                               |
+|                      |                     |.. code-block:: javascript                                                         |
 |                      |                     |                                                                                   |
 |                      |                     |   <iNSERT CODE>                                                                   |
 |                      |                     |                                                                                   |
@@ -105,7 +105,7 @@ Accounting
 |                      |                     +-----------------------------------------------------------------------------------+ 
 |                      |                     |``zcash-cli z_gettotalbalance``                                                    |
 |                      |                     |                                                                                   |
-|                      |                     |.. code-block:: json                                                               |
+|                      |                     |.. code-block:: javascript                                                         |
 |                      |                     |                                                                                   |
 |                      |                     |   {                                                                               |
 |                      |                     |        "transparent": "0.00",                                                     |
@@ -128,7 +128,7 @@ Addresses
 |z_getnewaddress       |                     +-----------------------------------------------------------------------------------+
 |                      |                     |``zcash-cli z_getnewaddress``                                                      |
 |                      |                     |                                                                                   |
-|                      |                     |.. code-block:: json                                                               |
+|                      |                     |.. code-block:: javascript                                                         |
 |                      |                     |                                                                                   |
 |                      |                     |   zcU1Cd6zYyZCd2VJF8yKgmzjxdiiU1rgTTjEwoN1CGUWCziPkU                              |
 |                      |                     |   TXUjXmX7TMqdMNsTfuiGN1jQoVN4kGxUR4sAPN4XZ7pxb                                   |                                                           
@@ -140,7 +140,7 @@ Addresses
 |                      |                     +-----------------------------------------------------------------------------------+
 |                      |                     |``zcash-cli z_listaddresses``                                                      |
 |                      |                     |                                                                                   |
-|                      |                     |.. code-block:: json                                                               |
+|                      |                     |.. code-block:: javascript                                                         |
 |                      |                     |                                                                                   |
 |                      |                     |   [                                                                               |
 |                      |                     |      "zcU1Cd6zYyZCd2VJF8yKgmzjxdiiU1rgTTjEwoN1CGUWCziPkU                          |
@@ -156,7 +156,7 @@ Addresses
 |                      |                     | | ``BG7AxaU6xicfKkuJ5ZtFEJkcGL2jUxiW145big239XFJ6CLu``                            |
 |                      |                     | | ``VeSMD5BQ9doGK5P3FVkQTeoabCG``                                                 |
 |                      |                     |                                                                                   |
-|                      |                     |.. code-block:: json                                                               |
+|                      |                     |.. code-block:: javascript                                                         |
 |                      |                     |                                                                                   |
 |                      |                     |   {                                                                               |
 |                      |                     |      "isvalid": true,                                                             |
@@ -187,7 +187,7 @@ Key Management
 |                       |                        +-----------------------------------------------------------------------------------+
 |                       |                        |``zcash-cli z_exportkey``                                                          |
 |                       |                        |                                                                                   |
-|                       |                        |.. code-block:: json                                                               |
+|                       |                        |.. code-block:: javascript                                                         |
 |                       |                        |                                                                                   |
 |                       |                        |   AKWUAkypwQjhZ6LLNaMuuuLcmZ6gt5UFyo8m3jGutvALmwZKLdR5                            |
 |                       |                        |                                                                                   |
@@ -204,7 +204,7 @@ Key Management
 |                       |                        +-----------------------------------------------------------------------------------+
 |                       |                        |``zcash-cli z_importkey``                                                          |
 |                       |                        |                                                                                   |
-|                       |                        |.. code-block:: json                                                               |
+|                       |                        |.. code-block:: javascript                                                         |
 |                       |                        |                                                                                   |
 |                       |                        |   <insert output>                                                                 |
 |                       |                        |                                                                                   |
@@ -221,7 +221,7 @@ Key Management
 |                       |                        +-----------------------------------------------------------------------------------+
 |                       |                        |``zcash-cli z_exportwallet wallet_out.file``                                       |
 |                       |                        |                                                                                   |
-|                       |                        |.. code-block:: json                                                               |
+|                       |                        |.. code-block:: javascript                                                         |
 |                       |                        |                                                                                   |
 |                       |                        |   <insert output>                                                                 |
 |                       |                        |                                                                                   |
@@ -239,7 +239,7 @@ Key Management
 |                       |                        +-----------------------------------------------------------------------------------+
 |                       |                        |``zcash-cli z_importwallet wallet_in.file``                                        |
 |                       |                        |                                                                                   |
-|                       |                        |.. code-block:: json                                                               |
+|                       |                        |.. code-block:: javascript                                                         |
 |                       |                        |                                                                                   |
 |                       |                        |   <insert output>                                                                 |
 |                       |                        |                                                                                   |
@@ -250,7 +250,7 @@ Key Management
 |                       |                        +-----------------------------------------------------------------------------------+
 |                       |                        |``zcash-cli z_exportviewkey``                                                      |
 |                       |                        |                                                                                   |
-|                       |                        |.. code-block:: json                                                               |
+|                       |                        |.. code-block:: javascript                                                         |
 |                       |                        |                                                                                   |
 |                       |                        |   <insert output>                                                                 |
 |                       |                        |                                                                                   |
@@ -261,7 +261,7 @@ Key Management
 |                       |                        +-----------------------------------------------------------------------------------+
 |                       |                        |``zcash-cli z_importviewingkey``                                                   |
 |                       |                        |                                                                                   |
-|                       |                        |.. code-block:: json                                                               |
+|                       |                        |.. code-block:: javascript                                                         |
 |                       |                        |                                                                                   |
 |                       |                        |   <insert output>                                                                 |
 |                       |                        |                                                                                   |
@@ -284,7 +284,7 @@ Payment
 |                            |                          +-----------------------------------------------------------------------------------+
 |                            |                          |``zcash-cli z_listreceivedbyaddress``                                              |
 |                            |                          |                                                                                   |
-|                            |                          |.. code-block:: json                                                               |
+|                            |                          |.. code-block:: javascript                                                         |
 |                            |                          |                                                                                   |
 |                            |                          |   [{<br>“txid”: “4a0f…”,<br>“amount”: 0.54,                                       |
 |                            |                          |   “memo”:”F0FF…”,}, {...}, {...}<br>]                                             |
@@ -299,7 +299,7 @@ Payment
 |                            |                          +-----------------------------------------------------------------------------------+
 |                            |                          |``zcash-cli z_listunspent``                                                        |
 |                            |                          |                                                                                   |
-|                            |                          |.. code-block:: json                                                               |
+|                            |                          |.. code-block:: javascript                                                         |
 |                            |                          |                                                                                   |
 |                            |                          |   {txid, jsindex, jsoutindex, confirmations, address, amount, memo}               |
 |                            |                          |                                                                                   |
@@ -322,7 +322,7 @@ Payment
 |                            |                          +-----------------------------------------------------------------------------------+
 |                            |                          |``zcash-cli z_sendmany``                                                           |
 |                            |                          |                                                                                   |
-|                            |                          |.. code-block:: json                                                               |
+|                            |                          |.. code-block:: javascript                                                         |
 |                            |                          |                                                                                   |
 |                            |                          |   [{“address”:”t123…”, “amount”:0.005}                                            |
 |                            |                          |   {“address”:”z010…”,”amount”:0.03, “memo”:”f508af…”}]                            |
@@ -361,7 +361,7 @@ Payment
 |                            |                          +-----------------------------------------------------------------------------------+
 |                            |                          |``zcash-cli z_shieldcoinbase``                                                     |
 |                            |                          |                                                                                   |
-|                            |                          |.. code-block:: json                                                               |
+|                            |                          |.. code-block:: javascript                                                         |
 |                            |                          |                                                                                   |
 |                            |                          |   <INSERT PRO CODE>                                                               |
 |                            |                          |                                                                                   |
@@ -411,7 +411,7 @@ It is currently not possible to cancel operations.
 |                         |                     +------------------------------------------------------------------------------------+
 |                         |                     |``zcash-cli z_getoperationresult``                                                  |
 |                         |                     |                                                                                    |
-|                         |                     |.. code-block:: json                                                                |
+|                         |                     |.. code-block:: javascript                                                          |
 |                         |                     |                                                                                    |
 |                         |                     |   {“operationid”: “opid-11ee…”,<br>“status”: “cancelled”},                         |
 |                         |                     |   {“operationid”: “opid-9876”, “status”: ”failed”},                                |
@@ -428,7 +428,7 @@ It is currently not possible to cancel operations.
 |                         |                     +------------------------------------------------------------------------------------+
 |                         |                     |``zcash-cli z_getoperationstatus``                                                  |
 |                         |                     |                                                                                    |
-|                         |                     |.. code-block:: json                                                                |
+|                         |                     |.. code-block:: javascript                                                          |
 |                         |                     |                                                                                    |
 |                         |                     |   {“operationid”: “opid-12ee…”,<br>“status”: “queued”},                            |
 |                         |                     |   {“operationid”: “opd-098a…”, “status”: ”executing”}                              |
@@ -450,7 +450,7 @@ It is currently not possible to cancel operations.
 |                         |                     +------------------------------------------------------------------------------------+
 |                         |                     |``zcash-cli z_listoperationids``                                                    |
 |                         |                     |                                                                                    |
-|                         |                     |.. code-block:: json                                                                |
+|                         |                     |.. code-block:: javascript                                                          |
 |                         |                     |                                                                                    |
 |                         |                     |   [“opid-0e0e…”, “opid-1af4…”, … ]                                                 |
 |                         |                     |                                                                                    | 

@@ -118,7 +118,7 @@ any of the following reasons:
    * - **Code**
      - **Reason**
    * - ``0000``
-     - it violates the :ref:`code-of-conduct`
+     - it violates the :ref:`code_of_conduct`
    * - ``0001``
      - it appears too unfocussed or broad
    * - ``0002``
@@ -177,7 +177,7 @@ any of the following reasons:
    * - ``0021``
      - it is spam
 
-:ref:`code-of-conduct`
+:ref:`code_of_conduct`
 
 The ZIP Editors MUST NOT unreasonably deny publication of a ZIP proposal or update 
 that does not violate any of these criteria. If they refuse a proposal or update, 
@@ -423,10 +423,10 @@ correspondence should be sent (or CC'd) to luke_ZIPeditor@dashjr.org.
 For each new ZIP that comes in an editor does the following:
 
 * Read the ZIP to check if it is ready: sound and complete. The ideas must make technical 
-sense, even if they don't seem likely to be accepted.
+  sense, even if they don't seem likely to be accepted.
 * The title should accurately describe the content.
 * Edit the ZIP for language (spelling, grammar, sentence structure, etc.), 
-markup, code style (examples should match ZIP 8 & 7).
+  markup, code style (examples should match ZIP 8 & 7).
 
 If the ZIP isn't ready, the editor will send it back to the author for revision, with specific instructions.
 
@@ -457,37 +457,16 @@ and the RFC Process also influenced this document.
 Please direct all comments to the ZIP Editors by email to <zips@z.cash> or by
 filing an issue in the `ZIPs issue tracker`_.
 
+.. important:: Please see `ZIPs <https://github.com/zcash/zips/>`_, for a current list.
+
+
 License
 -------
 
 The contents of this repository are released under the terms of the MIT license.
 See :ref:`License` for more information or see http://opensource.org/licenses/MIT.
 
-ZIPs
-----
 
-| Below are a list of existing ZIPs:
 
-    | :fa:`edit` :ref:`zip0143`
-    | :fa:`edit` :ref:`zip0200`
-    | :fa:`edit` :ref:`zip0201`
-    | :fa:`edit` :ref:`zip0202`
-    | :fa:`edit` :ref:`zip0203`
-    | :fa:`edit` :ref:`zip0243`
-
-.. toctree::
-   :caption: ZIPs
-   :hidden:
-   :maxdepth: 1
-   :titlesonly:
-
-   /rtd_pages/zips/zip-0143.rst
-   /rtd_pages/zips/zip-0200.rst
-   /rtd_pages/zips/zip-0201.rst
-   /rtd_pages/zips/zip-0202.rst
-   /rtd_pages/zips/zip-0203.rst
-   /rtd_pages/zips/zip-0243.rst
-
-Please see `ZIPs <https://github.com/zcash/zips/>`_, for a current list.
 
 

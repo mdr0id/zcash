@@ -1,3 +1,5 @@
+:orphan:
+
 Wiki :fa:`github`
 =================
 

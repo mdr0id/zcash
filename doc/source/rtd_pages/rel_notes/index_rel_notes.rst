@@ -1,3 +1,5 @@
+.. _index_rel_notes:
+
 Release Notes :fa:`file-text-o`
 ===============================
 

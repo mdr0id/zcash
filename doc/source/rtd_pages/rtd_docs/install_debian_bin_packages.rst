@@ -1,3 +1,5 @@
+:orphan:
+
 .. _install-debian-bin-packages-guide:
 
 Debian Binary Packages Setup
@@ -32,7 +34,7 @@ Finally, update the cache of sources and install Zcash:
    
    sudo apt-get update && sudo apt-get install zcash
 
-Lastly you can run ``./zcash-fetch-params`` to fetch the zero-knowledge parameters, and set up `~/.zcash/zcash.conf` before running Zcash as your local user, as documented in the :ref:`User-Guide`. 
+Lastly you can run ``./zcash-fetch-params`` to fetch the zero-knowledge parameters, and set up `~/.zcash/zcash.conf` before running Zcash as your local user, as documented in the :ref:`user_guide`. 
 
 Troubleshooting
 ---------------

@@ -1,4 +1,4 @@
-.. _code-of-conduct:
+.. _code_of_conduct:
 
 Contributor Code of Conduct
 ===========================

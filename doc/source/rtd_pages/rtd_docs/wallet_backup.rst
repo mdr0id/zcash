@@ -1,3 +1,5 @@
+:orphan:
+
 .. _wallet_backup:
 
 Wallet Backup Instructions

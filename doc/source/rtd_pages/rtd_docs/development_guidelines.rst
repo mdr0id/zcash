@@ -1,19 +1,19 @@
-.. _development_guidelines:
+:orphan:
 
+.. _development_guidelines:
 
 Development Guidelines
 ======================
-
 
 
 Code Management
 ---------------
 
 We achieve our design goals primarily through this codebase as a
-reference implementation. This repository is a fork of `Bitcoin Core`_
+reference implementation. This repository is a fork of `Bitcoin Core <https://github.com/bitcoin/bitcoin>`_
 as of upstream release 0.11.2 (many later Bitcoin PRs have also been
-ported to Zcash). It implements the `Zcash protocol`_ and a few other
-distinct features.
+ported to Zcash). It implements the `Zcash protocol <https://github.com/zcash/zips/blob/master/protocol/protocol.pdf>`_ 
+and a few other distinct features.
 
 `Bitcoin Core`: https://github.com/bitcoin/bitcoin
 `Zcash protocol`: https://github.com/zcash/zips/blob/master/protocol/protocol.pdf
@@ -41,7 +41,7 @@ src/test/test_bitcoin -t TESTGROUP/TESTNAME
 Continuous Integration
 ----------------------
 
-Watch the `Buildbot`_. Because the Buildbot is watching you.
+Watch the `Buildbot <https://ci.z.cash/>`_. Because the Buildbot is watching you.
 
 Buildbot: https://ci.z.cash/
 

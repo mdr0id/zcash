@@ -1,4 +1,4 @@
-.. _User-Guide:
+.. _user_guide:
 
 User Guide
 ==========
@@ -205,7 +205,7 @@ To run it in the background (without the node metrics screen that is normally di
 
 .. important:: If you are running Zcash for the first time you will need to allow your node to fully sync:
     
-   .. code-block:: bash
+   .. code-block:: console
     :emphasize-lines: 24
                                                                                                                                                         
              :88SX@888@@X8:                    8;     %X        X%     ;8       
@@ -246,7 +246,7 @@ To run it in the background (without the node metrics screen that is normally di
    Notice ``319430``, in the above output, after the ``Block height`` field, this means your Zcashd is fully sync.
    Alternatively, if you were *NOT* fully synced your output would look similar to below:
 
-   .. code-block:: bash
+   .. code-block:: console
     :emphasize-lines: 24
                                                                                  
              :88SX@888@@X8:                    8;     %X        X%     ;8       
