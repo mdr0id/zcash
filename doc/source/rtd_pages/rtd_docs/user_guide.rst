@@ -148,6 +148,8 @@ Configuration
 
 Following the steps below will create your zcashd configuration file which can be edited to either connect to ``mainnet`` or ``testnet`` as well as applying settings to safely access the RPC interface.
 
+.. tip:: For a complete list of parameters used in ``zcash.conf``, please check out :ref:`zcash_conf_guide`
+
 Create the `~/.zcash` directory:
 
 .. code-block:: bash
@@ -160,11 +162,13 @@ Mainnet
 
 Place a configuration file at `~/.zcash/zcash.conf` using the following commands:
 
+.. warning:: Note that this will overwrite any ``zcash.conf`` settings you may have added from testnet. (If you want to run on testnet, you can retain a `zcash.conf` from testnet.)
+
+
 .. code-block:: bash
 
    echo "addnode=mainnet.z.cash" >~/.zcash/zcash.conf
 
-.. note:: Note that this will overwrite any ``zcash.conf`` settings you may have added from testnet. (If you want to run on testnet, you can retain a `zcash.conf` from testnet.)
 
 Example configured for ``mainnet`` :
 
@@ -191,6 +195,26 @@ Example configured for ``testnet``:
 
     testnet=1
     addnode=testnet.z.cash
+
+Enabling CPU Mining
+*******************
+
+If you want to enable CPU mining, run these commands:
+
+.. code-block:: bash
+
+   echo 'gen=1' >> ~/.zcash/zcash.conf
+   echo "genproclimit=-1" >> ~/.zcash/zcash.conf
+
+Setting ``genproclimit=-1`` mines on the maximum number of threads possible on your CPU. If you want to mine with a lower number of threads, set ``genproclimit`` equal to the number of threads you would like to mine on.
+
+The default miner is not efficient, but has been well reviewed. To use a much more efficient but unreviewed solver, you can run this command:
+
+.. code-block:: bash
+
+   echo 'equihashsolver=tromp' >> ~/.zcash/zcash.conf
+
+Note, you probably want to read the [[Mining-Guide]] to learn more mining details.
 
 Usage
 -----
