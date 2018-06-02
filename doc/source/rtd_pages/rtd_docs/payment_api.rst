@@ -25,7 +25,7 @@ Compatibility with Bitcoin Core :fa:`bitcoin`
 
 Zcash supports all commands in the Bitcoin Core API (as of version ``0.11.2``).   Where applicable, Zcash will extend commands in a backwards-compatible way to enable additional functionality.
 
-We do not recommend use of accounts which are now deprecated in Bitcoin Core.  Where the account parameter exists in the API, please use ``“”`` as its value, otherwise an error will be returned.
+We do not recommend use of accounts which are now deprecated in Bitcoin Core.  Where the account parameter exists in the API, please use ``""`` as its value, otherwise an error will be returned.
 
 To support multiple users in a single node’s wallet, consider using ``getnewaddress`` or ``z_getnewaddress`` to obtain a new address for each user.  Also consider mapping multiple addresses to each user.
 
@@ -90,11 +90,11 @@ Accounting
 |z_getbalance          |                     | | transaction must have in order to be included in the balance.                   |
 |                      |                     | | Use 0 to unconfirmed transactions.                                              |
 |                      |                     +-----------------------------------------------------------------------------------+ 
-|                      |                     |``zcash-cli z_gettotalbalance``                                                    |
+|                      |                     |``./zcash-cli z_getbalance ztKNzxa8uZ1f...``                                       |
 |                      |                     |                                                                                   |
 |                      |                     |.. code-block:: javascript                                                         |
 |                      |                     |                                                                                   |
-|                      |                     |   <iNSERT CODE>                                                                   |
+|                      |                     |   0.00000000                                                                      |
 |                      |                     |                                                                                   |
 +----------------------+---------------------+-----------------------------------------------------------------------------------+
 |.. _z_gettotalbalance:| [minconf=1]         | | Return the total value of funds stored in the node’s wallet.                    |
@@ -103,7 +103,7 @@ Accounting
 |                      |                     | | in the balance. Use 0 to count unconfirmed transactions.                        |
 |                      |                     |                                                                                   |
 |                      |                     +-----------------------------------------------------------------------------------+ 
-|                      |                     |``zcash-cli z_gettotalbalance``                                                    |
+|                      |                     |``./zcash-cli z_gettotalbalance``                                                  |
 |                      |                     |                                                                                   |
 |                      |                     |.. code-block:: javascript                                                         |
 |                      |                     |                                                                                   |
@@ -126,7 +126,7 @@ Addresses
 |.. _z_getnewaddress:  |                     | | Return a new zaddr for sending and receiving payments. The                      | 
 |                      |                     | | spending key for this zaddr will be added to the node’s wallet.                 |
 |z_getnewaddress       |                     +-----------------------------------------------------------------------------------+
-|                      |                     |``zcash-cli z_getnewaddress``                                                      |
+|                      |                     |``./zcash-cli z_getnewaddress``                                                    |
 |                      |                     |                                                                                   |
 |                      |                     |.. code-block:: javascript                                                         |
 |                      |                     |                                                                                   |
@@ -138,35 +138,26 @@ Addresses
 |                      |                     | | which you have a spending key.                                                  |
 |z_listaddresses       |                     |                                                                                   |
 |                      |                     +-----------------------------------------------------------------------------------+
-|                      |                     |``zcash-cli z_listaddresses``                                                      |
+|                      |                     |``./zcash-cli z_listaddresses``                                                    |
 |                      |                     |                                                                                   |
 |                      |                     |.. code-block:: javascript                                                         |
 |                      |                     |                                                                                   |
 |                      |                     |   [                                                                               |
-|                      |                     |      "zcU1Cd6zYyZCd2VJF8yKgmzjxdiiU1rgTTjEwoN1CGUWCziPkU                          |
-|                      |                     |        TXUjXmX7TMqdMNsTfuiGN1jQoVN4kGxUR4sAPN4XZ7pxb",                            |
-|                      |                     |      "zcddV3rosTRpWqNjqx1EBXx6p5PX72aDoeEcaCLDTjXhyPXPLU                          |
-|                      |                     |        Vradpjk3njLcS2fuxCFGJtLjkUfKjYop1URXabDy5A7U3"                             |                                                           
+|                      |                     |      "zcU1Cd6zYyZCd2VJ...",                                                       |
+|                      |                     |      "zcddV3rosTRpWqNj..."                                                        |                                                           
 |                      |                     |   ]                                                                               |
 +----------------------+---------------------+-----------------------------------------------------------------------------------+
 |.. _z_validateaddress:| zaddr               | Return information about a given zaddr                                            |
 |                      |                     |                                                                                   |
 |z_validateaddress     |                     +-----------------------------------------------------------------------------------+
-|                      |                     | | ``zcash-cli z_validateaddress zcbcb6XnP8hbV5y6ZwsY``                            |
-|                      |                     | | ``BG7AxaU6xicfKkuJ5ZtFEJkcGL2jUxiW145big239XFJ6CLu``                            |
-|                      |                     | | ``VeSMD5BQ9doGK5P3FVkQTeoabCG``                                                 |
+|                      |                     |``./zcash-cli z_validateaddress zcbcb6XnP8hbV5y6Z...``                             |
 |                      |                     |                                                                                   |
 |                      |                     |.. code-block:: javascript                                                         |
 |                      |                     |                                                                                   |
 |                      |                     |   {                                                                               |
 |                      |                     |      "isvalid": true,                                                             |
-|                      |                     |      "address": "zcbcb6XnP8hbV5y6ZwsYBG7AxaU6xicfK                                |
-|                      |                     |                  kuJ5ZtFEJkcGL2jUxiW145big239XFJ6C                                |
-|                      |                     |                  LuVeSMD5BQ9doGK5P3FVkQTeoabCG",                                  |
-|                      |                     |      "payingkey": "b4ae837201504154673313e6eb011ca                                |
-|                      |                     |                    fabe14f3825f06c6ba55272b07add57d1",                            |
-|                      |                     |      "payingkey": "b4ae837201504154673313e6eb011cafa                              |
-|                      |                     |                     be14f3825f06c6ba55272b07add57d1",                             |  
+|                      |                     |      "address": "zcbcb6XnP8hbV5y6ZwsY...",                                        |
+|                      |                     |      "payingkey": "b4ae837...",                                                   |
 |                      |                     |      "ismine": true                                                               |
 |                      |                     |   }                                                                               |
 +----------------------+---------------------+-----------------------------------------------------------------------------------+
@@ -185,15 +176,15 @@ Key Management
 |                       |                        | | using Base58Check as described in the Zcash protocol spec.                      |
 |                       |                        |                                                                                   |
 |                       |                        +-----------------------------------------------------------------------------------+
-|                       |                        |``zcash-cli z_exportkey``                                                          |
+|                       |                        |``./zcash-cli z_exportkey zcbcb6XnP8hbV5y6Z...``                                   |
 |                       |                        |                                                                                   |
 |                       |                        |.. code-block:: javascript                                                         |
 |                       |                        |                                                                                   |
-|                       |                        |   AKWUAkypwQjhZ6LLNaMuuuLcmZ6gt5UFyo8m3jGutvALmwZKLdR5                            |
+|                       |                        |   AKWUAkypwQjhZ6LLNa...                                                           |
 |                       |                        |                                                                                   |
 +-----------------------+------------------------+-----------------------------------------------------------------------------------+
-|.. _z_importkey:       | zkey [rescan=true]     | | Wallet must be unlocked. Add a zkey as returned by                              |
-|                       |                        | | z_exportkey to a node's wallet. The key should be                               |
+|.. _z_importkey:       | | zkey                 | | Wallet must be unlocked. Add a zkey as returned by                              |
+|                       | | [rescan=true]        | | z_exportkey to a node's wallet. The key should be                               |
 |z_importkey            |                        | | formatted using Base58Check as described in the Zcash                           |
 |                       |                        | | protocol spec. Set rescan to true (the default) to rescan                       |
 |                       |                        | | the entire local block database  for transactions affecting                     |
@@ -202,11 +193,11 @@ Key Management
 |                       |                        | | spending key).                                                                  |
 |                       |                        |                                                                                   |
 |                       |                        +-----------------------------------------------------------------------------------+
-|                       |                        |``zcash-cli z_importkey``                                                          |
+|                       |                        |``./zcash-cli z_importkey AKWUAkypwQjhZ6LLNa...``                                  |
 |                       |                        |                                                                                   |
 |                       |                        |.. code-block:: javascript                                                         |
 |                       |                        |                                                                                   |
-|                       |                        |   <insert output>                                                                 |
+|                       |                        |   <No output will appear if successful>                                           |
 |                       |                        |                                                                                   |
 +-----------------------+------------------------+-----------------------------------------------------------------------------------+
 |.. _z_exportwallet:    | filename               | | Requires an unlocked wallet or an unencrypted wallet.                           |
@@ -217,13 +208,20 @@ Key Management
 |                       |                        | | existing file with that name will be overwritten. No                            |
 |                       |                        | | value is returned but a JSON-RPC error will be reported                         |
 |                       |                        | | if a failure occurred.                                                          |
+|                       |                        | .. note::                                                                         |
+|                       |                        |    | Please ensure you have specified the                                         |
+|                       |                        |    | directory to export to in zcash.conf                                         |
+|                       |                        |                                                                                   |
+|                       |                        |    .. code-block:: javascript                                                     |
+|                       |                        |                                                                                   |
+|                       |                        |       exportdir=/home/user1/zcash                                                 |
 |                       |                        |                                                                                   |
 |                       |                        +-----------------------------------------------------------------------------------+
-|                       |                        |``zcash-cli z_exportwallet wallet_out.file``                                       |
+|                       |                        |``./zcash-cli z_exportwallet wfile``                                               |
 |                       |                        |                                                                                   |
 |                       |                        |.. code-block:: javascript                                                         |
 |                       |                        |                                                                                   |
-|                       |                        |   <insert output>                                                                 |
+|                       |                        |   <No output will appear if successful>                                           |
 |                       |                        |                                                                                   |
 +-----------------------+------------------------+-----------------------------------------------------------------------------------+
 |.. _z_importwallet:    | filename               | | Requires an unlocked wallet or an unencrypted wallet.                           |
@@ -233,37 +231,39 @@ Key Management
 |                       |                        | | to rescan all or parts of the block chain for transactions                      |
 |                       |                        | | affecting the newly-added keys, which may take several                          |
 |                       |                        | | minutes.Filename is the file to import. The path is                             |
-|                       |                        | | relative to zcashd’s working directory. No value is returned                    |
-|                       |                        | | but a JSON-RPC error will be reported if a failure occurred.                    |
+|                       |                        | | relative to zcashd’s working directory. No value is                             |
+|                       |                        | | returned but a JSON-RPC error will be reported if a                             |
+|                       |                        | | failure occurred.                                                               |
 |                       |                        |                                                                                   |
 |                       |                        +-----------------------------------------------------------------------------------+
-|                       |                        |``zcash-cli z_importwallet wallet_in.file``                                        |
+|                       |                        |``./zcash-cli z_importwallet /home/user1/zcash/wfile``                             |
 |                       |                        |                                                                                   |
 |                       |                        |.. code-block:: javascript                                                         |
 |                       |                        |                                                                                   |
-|                       |                        |   <insert output>                                                                 |
+|                       |                        |   <No output will appear if successful>                                           |
 |                       |                        |                                                                                   |
 +-----------------------+------------------------+-----------------------------------------------------------------------------------+
 |.. _z_exportviewingkey:| zaddr                  | | Reveals the viewing key corresponding to 'zaddr'. Then                          |
 |                       |                        | | the z_importviewingkey can be used with this output.                            |
 |z_exportviewingkey     |                        |                                                                                   |
 |                       |                        +-----------------------------------------------------------------------------------+
-|                       |                        |``zcash-cli z_exportviewkey``                                                      |
+|                       |                        |``./zcash-cli z_exportviewingkey ztKNzxa8uZ...``                                   |
 |                       |                        |                                                                                   |
 |                       |                        |.. code-block:: javascript                                                         |
 |                       |                        |                                                                                   |
-|                       |                        |   <insert output>                                                                 |
+|                       |                        |   ZiVtJjUXq5...                                                                   |
 |                       |                        |                                                                                   |
 +-----------------------+------------------------+-----------------------------------------------------------------------------------+
-|.. _z_importviewingkey:| | vkey                 | | Adds a viewing key (as returned by z_exportviewingkey) to                       |
-|                       | | [rescan=whenkeyisnew]| | your wallet.                                                                    |
-|z_importviewingkey     | | [startHeight=0]      |                                                                                   |
+|.. _z_importviewingkey:| | vkey                 | | Adds a viewing key (as returned by ``z_exportviewingkey``)                      |
+|                       | | [rescan=             | | to your wallet.                                                                 |
+|z_importviewingkey     | | whenkeyisnew]        |                                                                                   |
+|                       | | [startHeight=0]      |                                                                                   |
 |                       |                        +-----------------------------------------------------------------------------------+
-|                       |                        |``zcash-cli z_importviewingkey``                                                   |
+|                       |                        |``./zcash-cli z_importviewingkey ZiVtJjUXq5...``                                   |
 |                       |                        |                                                                                   |
 |                       |                        |.. code-block:: javascript                                                         |
 |                       |                        |                                                                                   |
-|                       |                        |   <insert output>                                                                 |
+|                       |                        |   <No output will appear if successful>                                           |
 |                       |                        |                                                                                   |
 +-----------------------+------------------------+-----------------------------------------------------------------------------------+
 
@@ -275,40 +275,58 @@ Payment
 +----------------------------+--------------------------+-----------------------------------------------------------------------------------+
 |**Command**                 | **Parameters**           | **Description**                                                                   |
 +----------------------------+--------------------------+-----------------------------------------------------------------------------------+
-|.. _z_listreceivedbyaddress:| zaddr [minconf=1]        | | Return a list of amounts received by a zaddr belonging to                       |
-|                            |                          | | the node’s wallet.Optionally set the minimum                                    |
+|.. _z_listreceivedbyaddress:|| zaddr                   | | Return a list of amounts received by a zaddr belonging to                       |
+|                            || [minconf=1]             | | the node’s wallet.Optionally set the minimum                                    |
 |z_listreceivedbyaddress     |                          | | number of confirmations which a received amount must have                       |
 |                            |                          | | in order to be included in the result.  Use 0 to count                          |
 |                            |                          | | unconfirmed transactions.                                                       |
 |                            |                          |                                                                                   |
 |                            |                          +-----------------------------------------------------------------------------------+
-|                            |                          |``zcash-cli z_listreceivedbyaddress``                                              |
+|                            |                          |``./zcash-cli z_listreceivedbyaddress ztKNzxa8uZ...``                              |
 |                            |                          |                                                                                   |
 |                            |                          |.. code-block:: javascript                                                         |
 |                            |                          |                                                                                   |
-|                            |                          |   [{<br>“txid”: “4a0f…”,<br>“amount”: 0.54,                                       |
-|                            |                          |   “memo”:”F0FF…”,}, {...}, {...}<br>]                                             |
+|                            |                          |   [                                                                               |
+|                            |                          |    {                                                                              |
+|                            |                          |     "txid": "34d19c681...",                                                       |
+|                            |                          |     "amount": 1.00000000,                                                         |
+|                            |                          |     "memo": "5468616e...",                                                        |
+|                            |                          |     "jsindex": 0,                                                                 |
+|                            |                          |     "jsoutindex": 1                                                               |
+|                            |                          |    }                                                                              |
+|                            |                          |   ]                                                                               |
 |                            |                          |                                                                                   |
 +----------------------------+--------------------------+-----------------------------------------------------------------------------------+
 |.. _z_listunspent:          || [minconf=1]             | | Returns array of unspent shielded notes with between minconf                    |
 |                            || [maxconf=9999999]       | | and maxconf (inclusive) confirmations. Optionally filter to                     |
-|z_listunspent               || [includeWatchonly=false]| | only include notes sent to specified addresses. When minconf                    |
-|                            || [zaddrs]                | | is 0, unspent notes with zero confirmations are returned                        |
-|                            |                          | | even though they are not immediately spendable.                                 |
+|z_listunspent               || [includeWatchonly=      | | only include notes sent to specified addresses. When minconf                    |
+|                            || false]                  | | is 0, unspent notes with zero confirmations are returned                        |
+|                            || [zaddrs]                | | even though they are not immediately spendable.                                 |
 |                            |                          |                                                                                   |
 |                            |                          +-----------------------------------------------------------------------------------+
-|                            |                          |``zcash-cli z_listunspent``                                                        |
+|                            |                          |``./zcash-cli z_listunspent``                                                      |
 |                            |                          |                                                                                   |
 |                            |                          |.. code-block:: javascript                                                         |
 |                            |                          |                                                                                   |
-|                            |                          |   {txid, jsindex, jsoutindex, confirmations, address, amount, memo}               |
+|                            |                          |   [                                                                               |
+|                            |                          |    {                                                                              |
+|                            |                          |     "txid": "34d19c681b9a0672...",                                                |
+|                            |                          |     "jsindex": 0,                                                                 |
+|                            |                          |     "jsoutindex": 1,                                                              |
+|                            |                          |     "confirmations": 4,                                                           |
+|                            |                          |     "spendable": true,                                                            |
+|                            |                          |     "address": "ztKNzxa8uZ1fL...",                                                |
+|                            |                          |     "amount": 1.00000000,                                                         |
+|                            |                          |     "memo": "5468616e6b73206..."                                                  |
+|                            |                          |    }                                                                              |
+|                            |                          |   ]                                                                               |
 |                            |                          |                                                                                   |
 +----------------------------+--------------------------+-----------------------------------------------------------------------------------+
 |.. _z_sendmany:             || fromaddress             | | This is an Asynchronous RPC call. Send funds from an                            |
-|                            || amounts                 | | address to multiple outputs. The address can be a                               |
-|z_sendmany                  || [minconf=1]             | | taddr or a zaddr. Amounts is a list containing key/value                        |
-|                            || [fee=0.0001]            | | pairs corresponding to the addresses and amount to pay.                         |
-|                            |                          | | Each output address can be in taddr or zaddr format.                            |
+|                            || toadress                | | address to multiple outputs. The address can be a                               |
+|z_sendmany                  || amount                  | | taddr or a zaddr. Amounts is a list containing key/value                        |
+|                            || [minconf=1]             | | pairs corresponding to the addresses and amount to pay.                         |
+|                            || [fee=0.0001]            | | Each output address can be in taddr or zaddr format.                            |
 |                            |                          | | When sending to a zaddr, you also have the option of                            |
 |                            |                          | | of attaching a memo in hexadecimal format.                                      |
 |                            |                          |                                                                                   |
@@ -320,13 +338,13 @@ Payment
 |                            |                          | | may be removed.                                                                 |
 |                            |                          |                                                                                   |
 |                            |                          +-----------------------------------------------------------------------------------+
-|                            |                          |``zcash-cli z_sendmany``                                                           |
+|                            |                          || ``./zcash-cli z_sendmany ztKNzxa8u...``                                          | 
+|                            |                          || ``'[{"address": "ztWcr4...", "amount": 0.001},``                                 |
+|                            |                          || ``{"address": "ztXGs...", "amount": 0.002}]'``                                   |
 |                            |                          |                                                                                   |
 |                            |                          |.. code-block:: javascript                                                         |
 |                            |                          |                                                                                   |
-|                            |                          |   [{“address”:”t123…”, “amount”:0.005}                                            |
-|                            |                          |   {“address”:”z010…”,”amount”:0.03, “memo”:”f508af…”}]                            |
-|                            |                          |                                                                                   |
+|                            |                          |   opid-58a078dc-a5d8-48de-bf8b-3d1...                                             |                                                                                   
 |                            |                          |                                                                                   |  
 |                            |                          || Optionally set the minimum number of confirmations which a                       |
 |                            |                          || private or transparent transaction must have in order to be                      |
@@ -359,11 +377,17 @@ Payment
 |                            |                          | | transaction and what remains to be shielded.                                    |
 |                            |                          |                                                                                   |
 |                            |                          +-----------------------------------------------------------------------------------+
-|                            |                          |``zcash-cli z_shieldcoinbase``                                                     |
+|                            |                          |``./zcash-cli z_shieldcoinbase tmFViN6... ztKNzx...``                              |
 |                            |                          |                                                                                   |
 |                            |                          |.. code-block:: javascript                                                         |
 |                            |                          |                                                                                   |
-|                            |                          |   <INSERT PRO CODE>                                                               |
+|                            |                          |   {                                                                               |
+|                            |                          |    "remainingUTXOs": 0,                                                           |       
+|                            |                          |    "remainingValue": 0.00000000,                                                  |
+|                            |                          |    "shieldingUTXOs": 1,                                                           |
+|                            |                          |    "shieldingValue": 10.00000000,                                                 |
+|                            |                          |    "opid": "opid-d6573e4e-4c44-4d3f-b351-d719ed..."                               |
+|                            |                          |   }                                                                               |
 |                            |                          |                                                                                   |
 +----------------------------+--------------------------+-----------------------------------------------------------------------------------+
 
@@ -376,22 +400,37 @@ Operations
 
 Asynchronous calls return an OperationStatus object which is a JSON object with the following defined key-value pairs:
 
-* operationid : unique identifier for the async operation.  Use this value with z_getoperationstatus or z_getoperationresult to poll and query the operation and obtain its result.
-* status : current status of operation
-  * queued : operation is pending execution
-  * executing : operation is currently being executed
-  * cancelled
-  * failed.
-  * success
-* result : result object if the status is ‘success’.  The exact form of the result object is dependent on the call itself.
-* error: error object if the status is ‘failed’. The error object has the following key-value pairs:
-  * code : number
-  * message: error message
 
-Depending on the type of asynchronous call, there may be other key-value pairs.  For example, a z_sendmany operation will also include the following in an OperationStatus object:
++-------------------------+--------------------------------------------------------------------------------------------------------+
+|**Item**                 |   **Description**                                                                                      |
++-------------------------+--------------------------------------------------------------------------------------------------------+
+| operationid             | | Unique identifier for the async operation.  Use this value with ``z_getoperationstatus`` or          |
+|                         | | ``z_getoperationresult`` to poll and query the operation and obtain its result.                      |
++-------------------------+--------------------------------------------------------------------------------------------------------+
+| status                  | | Current status of operation:                                                                         |
+|                         | |                                                                                                      |
+|                         | | **queued :** operation is pending execution                                                          |
+|                         | | **executing :** operation is currently being executed                                                |
+|                         | | **cancelled:** operation is cancelled                                                                |
+|                         | | **failed :** operation has failed                                                                    |
+|                         | | **success :** operation has succeeded                                                                |
+|                         |                                                                                                        |
++-------------------------+--------------------------------------------------------------------------------------------------------+
+| result                  | | Result object if the status is *‘success’*.  The exact form of the result object is                  |
+|                         | | dependent on the call itself.                                                                        |
++-------------------------+--------------------------------------------------------------------------------------------------------+
+| error                   | | Error object if the status is *‘failed’*. The error object has the following key-value pairs:        |
+|                         | |                                                                                                      |
+|                         | | **code :** number                                                                                    |
+|                         | | **message:** error message                                                                           |
++-------------------------+--------------------------------------------------------------------------------------------------------+
 
-* method : name of operation e.g. z_sendmany
-* params : an object containing the parameters to z_sendmany
+.. important::
+   Depending on the type of asynchronous call, there may be other key-value pairs.  For example, a ``z_sendmany``
+   operation will also include the following in an OperationStatus object:
+   
+    | **method** : name of operation ( e.g. ``z_sendmany``)
+    | **params** : an object containing the parameters to ``z_sendmany``
 
 Currently, as soon as you retrieve the operation status for an operation which has finished, that is it has either succeeded, failed, or been cancelled, the operation and any associated information is removed.
 
@@ -409,16 +448,37 @@ It is currently not possible to cancel operations.
 |                         |                     | | "failed", "cancelled" or "success".                                              |
 |                         |                     |                                                                                    |
 |                         |                     +------------------------------------------------------------------------------------+
-|                         |                     |``zcash-cli z_getoperationresult``                                                  |
+|                         |                     |``./zcash-cli z_getoperationresult``                                                |
 |                         |                     |                                                                                    |
 |                         |                     |.. code-block:: javascript                                                          |
 |                         |                     |                                                                                    |
-|                         |                     |   {“operationid”: “opid-11ee…”,<br>“status”: “cancelled”},                         |
-|                         |                     |   {“operationid”: “opid-9876”, “status”: ”failed”},                                |
-|                         |                     |   {“operationid”: “opid-0e0e”,<br>“status”:”success”,                              |
-|                         |                     |   “execution_time”:”25”,<br>“result”: {“txid”:”af3887654…”,...}<br>},<br>]<br><br> |
-|                         |                     |   Examples:<br>zcash-cli z_getoperationresult                                      |
-|                         |                     |   ["opid-8120fa20-5ee7-4587-957b-f2579c2d882b"]'<br> zcash-cli z_getoperationresult|
+|                         |                     |   [                                                                                |
+|                         |                     |    {                                                                               |
+|                         |                     |     "id": "opid-58a078dc-a5d8-48de-bf8b-3d1f71...",                                |
+|                         |                     |     "status": "success",                                                           |
+|                         |                     |     "creation_time": 1527886498,                                                   |
+|                         |                     |     "result": {                                                                    |
+|                         |                     |       "txid": "9f8d61d9454e0ef2b7ac525a55eefa2..."                                 |
+|                         |                     |     },                                                                             |
+|                         |                     |     "execution_secs": 141.212681193,                                               |
+|                         |                     |     "method": "z_sendmany",                                                        |
+|                         |                     |     "params": {                                                                    |
+|                         |                     |       "fromaddress": "ztKNzxa8uZ1fLvwMLNikk2J...",                                 |
+|                         |                     |       "amounts": [                                                                 |
+|                         |                     |         {                                                                          |
+|                         |                     |           "address": "ztWcr45gw32s1j6...",                                         |
+|                         |                     |           "amount": 0.001                                                          |
+|                         |                     |         },                                                                         |
+|                         |                     |         {                                                                          |
+|                         |                     |           "address": "ztXGsmLQ1sS8SMd5ZDBB...",                                    |
+|                         |                     |           "amount": 0.002                                                          |
+|                         |                     |         }                                                                          |
+|                         |                     |       ],                                                                           |
+|                         |                     |       "minconf": 1,                                                                |
+|                         |                     |       "fee": 0.0001                                                                |
+|                         |                     |    }                                                                               |
+|                         |                     |   }                                                                                |
+|                         |                     |  ]                                                                                 |
 +-------------------------+---------------------+------------------------------------------------------------------------------------+
 |.. _z_getoperationstatus:| [operationids]      | | Return OperationStatus JSON objects for all operations                           |
 |                         |                     | | the node is currently aware of. Operationids is an optional                      |
@@ -426,20 +486,37 @@ It is currently not possible to cancel operations.
 |                         |                     | | objects for. Output is a list of operation status objects.                       |                                                                    
 |                         |                     |                                                                                    |
 |                         |                     +------------------------------------------------------------------------------------+
-|                         |                     |``zcash-cli z_getoperationstatus``                                                  |
+|                         |                     |``./zcash-cli z_getoperationstatus``                                                |
 |                         |                     |                                                                                    |
 |                         |                     |.. code-block:: javascript                                                          |
 |                         |                     |                                                                                    |
-|                         |                     |   {“operationid”: “opid-12ee…”,<br>“status”: “queued”},                            |
-|                         |                     |   {“operationid”: “opd-098a…”, “status”: ”executing”}                              |
-|                         |                     |   {“operationid”: “opid-9876”, “status”: ”failed”}                                 |
-|                         |                     |                                                                                    |
-|                         |                     || When the operation succeeds, the status object will                               |
-|                         |                     || also include the result.                                                          |
-|                         |                     ||                                                                                   |
-|                         |                     || {“operationid”: “opid-0e0e”,<br>“status”:”success”,<br>                           |
-|                         |                     || “execution_time”:”25”,“result”: {“txid”:”af3887654…”,...}                         |
-|                         |                     |                                                                                    |
+|                         |                     |   [                                                                                |
+|                         |                     |    {                                                                               |
+|                         |                     |     "id": "opid-58a078dc-a5d8-48de-bf8b-3d1f71...",                                |
+|                         |                     |     "status": "success",                                                           |
+|                         |                     |     "creation_time": 1527886498,                                                   |
+|                         |                     |     "result": {                                                                    |
+|                         |                     |       "txid": "9f8d61d9454e0ef2b7ac525a55eefa2..."                                 |
+|                         |                     |     },                                                                             |
+|                         |                     |     "execution_secs": 141.212681193,                                               |
+|                         |                     |     "method": "z_sendmany",                                                        |
+|                         |                     |     "params": {                                                                    |
+|                         |                     |       "fromaddress": "ztKNzxa8uZ1fLvwMLNikk2J...",                                 |
+|                         |                     |       "amounts": [                                                                 |
+|                         |                     |         {                                                                          |
+|                         |                     |           "address": "ztWcr45gw32s1j6...",                                         |
+|                         |                     |           "amount": 0.001                                                          |
+|                         |                     |         },                                                                         |
+|                         |                     |         {                                                                          |
+|                         |                     |           "address": "ztXGsmLQ1sS8SMd5ZDBB...",                                    |
+|                         |                     |           "amount": 0.002                                                          |
+|                         |                     |         }                                                                          |
+|                         |                     |       ],                                                                           |
+|                         |                     |       "minconf": 1,                                                                |
+|                         |                     |       "fee": 0.0001                                                                |
+|                         |                     |    }                                                                               |
+|                         |                     |   }                                                                                |
+|                         |                     |  ]                                                                                 |
 +-------------------------+---------------------+------------------------------------------------------------------------------------+
 |.. _z_listoperationids:  | [state]             || Return a list of operationids for all operations which                            |
 |                         |                     || the node is currently aware of. State is an optional                              |
@@ -448,11 +525,15 @@ It is currently not possible to cancel operations.
 |                         |                     || values are ‘queued’, ‘executing’, ‘success’, ‘failed’,                            |
 |                         |                     |                                                                                    |
 |                         |                     +------------------------------------------------------------------------------------+
-|                         |                     |``zcash-cli z_listoperationids``                                                    |
+|                         |                     |``./zcash-cli z_listoperationids``                                                  |
 |                         |                     |                                                                                    |
 |                         |                     |.. code-block:: javascript                                                          |
 |                         |                     |                                                                                    |
-|                         |                     |   [“opid-0e0e…”, “opid-1af4…”, … ]                                                 |
+|                         |                     |   [                                                                                |                                        
+|                         |                     |    "opid-58a078dc-a5d8-48de-bf8b-3d1f71...",                                       |
+|                         |                     |    "opid-59a078dc-a5d8-48de-bf8b-3d1f71...",                                       |
+|                         |                     |    "opid-58a078dc-a5d8-48de-bf8b-3d1f71..."                                        |
+|                         |                     |   ]                                                                                |
 |                         |                     |                                                                                    | 
 +-------------------------+---------------------+------------------------------------------------------------------------------------+
 
