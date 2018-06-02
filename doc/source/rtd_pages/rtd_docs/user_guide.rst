@@ -130,6 +130,8 @@ This will fetch our Sprout proving and verifying keys (the final ones created in
 
 The message printed by ``git checkout`` about a "detached head" is normal and does not indicate a problem.
 
+.. _ugBuild:
+
 Build
 -----
 
@@ -142,6 +144,8 @@ Ensure you have successfully installed all system package dependencies as descri
 .. attention:: If you recieved any errors, from the above command, please check out our :ref:`troubleshooting-guide`
 
 .. note:: This should compile our dependencies and build ``zcashd``. (Note: if you don't have ``nproc``, then substitute the number of cores on your system. If the build runs out of memory, try again without the ``-j`` argument, i.e. just ``./zcutil/build.sh``.
+
+.. _ugConfiguration:
 
 Configuration
 -------------
@@ -196,6 +200,8 @@ Example configured for ``testnet``:
     testnet=1
     addnode=testnet.z.cash
 
+.. _Enable_CPU_Mining:
+
 Enabling CPU Mining
 *******************
 
@@ -214,7 +220,7 @@ The default miner is not efficient, but has been well reviewed. To use a much mo
 
    echo 'equihashsolver=tromp' >> ~/.zcash/zcash.conf
 
-Note, you probably want to read the [[Mining-Guide]] to learn more mining details.
+Note, you probably want to read the :ref:`zcash_mining_guide` to learn more mining details.
 
 Usage
 -----

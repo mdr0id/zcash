@@ -463,7 +463,7 @@ filing an issue in the `ZIPs issue tracker`_.
 License
 -------
 
-The contents of this repository are released under the terms of the MIT license.
+The contents of the ZIPs repository are released under the terms of the MIT license.
 See :ref:`License` for more information or see http://opensource.org/licenses/MIT.
 
 
