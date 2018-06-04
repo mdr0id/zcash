@@ -97,6 +97,8 @@ MAC
 CENTOS
     .. note:: As of 5/1/2018 this platform is not fully supported. However, we are actively working to complete the components to support this.
 
+Please see our :ref:`supported_platform_policy` for additional details.
+
 Next, we need to ensure we have the correct version of ``gcc`` and ``binutils``
 
     1. gcc/g++ 4.9 *or later* is required. 
