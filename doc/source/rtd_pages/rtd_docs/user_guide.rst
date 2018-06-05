@@ -94,18 +94,34 @@ WINDOWS (cross-compile)
 MAC
     .. note:: As of 5/1/2018 this platform is not fully supported. However, we are actively working to complete the components to support this.
     
-CENTOS
-    .. note:: As of 5/1/2018 this platform is not fully supported. However, we are actively working to complete the components to support this.
+CENTOS 7+
+    .. code-block:: bash
+
+       sudo yum install \
+       autoconf libtool unzip git python \
+       wget curl  automake gcc gcc-c++ patch \
+       glibc-static libstdc++-static
+
+    Please execute the below commands in order.
+
+    .. code-block:: bash
+
+       sudo yum install centos-release-scl-rh
+       sudo yum install devtoolset-3-gcc devtoolset-3-gcc-c++
+       sudo update-alternatives --install /usr/bin/gcc-4.9 gcc-4.9 /opt/rh/devtoolset-3/root/usr/bin/gcc 10
+       sudo update-alternatives --install /usr/bin/g++-4.9 g++-4.9 /opt/rh/devtoolset-3/root/usr/bin/g++ 10
+       scl enable devtoolset-3 bash
+    
 
 Please see our :ref:`supported_platform_policy` for additional details.
 
-Next, we need to ensure we have the correct version of ``gcc`` and ``binutils``
+Next, we need to ensure we have the correct version of ``gcc`` , ``g++`` , and ``binutils``
 
-    1. gcc/g++ 4.9 *or later* is required. 
+    1. **gcc/g++ 4.9 or later is required.** 
         
         Zcash has been successfully built using gcc/g++ versions 4.9 to 7.x inclusive. 
 
-        Use ``g++ --version`` to check which version you have.
+        Use ``g++ --version`` or ``gcc --version`` to check which version you have.
 
         On Ubuntu Trusty, if your version is too old then you can install gcc/g++ 4.9 as follows:
 
@@ -115,7 +131,7 @@ Next, we need to ensure we have the correct version of ``gcc`` and ``binutils``
    	 	  $ sudo apt-get update
    		  $ sudo apt-get install g++-4.9
 
-    2. binutils 2.22 *or later* is required. 
+    2. **binutils 2.22 or later is required.**
 
         Use ``as --version`` to check which version you have, and upgrade if necessary.
 
