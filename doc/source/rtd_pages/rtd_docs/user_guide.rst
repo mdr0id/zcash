@@ -89,10 +89,19 @@ RHEL (including Scientific Linux)
     - Run ``scl enable devtoolset-3 'scl enable autotools-latest bash'`` and do the remainder of the build in the shell that this starts.
 
 WINDOWS (cross-compile)
-    .. note:: As of 5/1/2018 this platform is not fully supported. However, we are actively working to complete the components to support this.
+    .. note:: 
+    
+       As of 5/1/2018 this platform is not fully supported. However, we are actively working to complete the components to support this.
+
+       To view active work on this platform, see: :fa:`github` `#3172 <https://github.com/zcash/zcash/pull/3172>`_
+       
     
 MAC
-    .. note:: As of 5/1/2018 this platform is not fully supported. However, we are actively working to complete the components to support this.
+    .. note:: 
+    
+       As of 5/1/2018 this platform is not fully supported. However, we are actively working to complete the components to support this.
+
+       To view active work on this platform, see: :fa:`github` `#2820 <https://github.com/zcash/zcash/pull/2820>`_
     
 CENTOS 7+
     .. code-block:: bash
