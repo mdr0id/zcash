@@ -1,3 +1,5 @@
+:orphan:
+
 .. _zip0143:
 
 ZIP 0143
@@ -188,7 +190,7 @@ The script being currently executed: ``redeemScript`` for P2SH, or ``scriptPubKe
 is the same script as serialized in the Sprout transaction digest algorithm.
 
 10c: value
-`````````
+``````````
 An 8-byte little-endian value of the amount, in zatoshi, spent in this input.
 
 Notes

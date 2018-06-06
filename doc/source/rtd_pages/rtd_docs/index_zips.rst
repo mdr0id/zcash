@@ -112,7 +112,7 @@ becomes necessary SHOULD be submitted before January 1st, 2017.
 The ZIP Editors MAY reject a proposed ZIP or update to an existing ZIP for
 any of the following reasons:
 
-.. list-table:: z_sendmany
+.. list-table::
    :widths: 10 50
 
    * - **Code**
@@ -409,16 +409,9 @@ It occasionally becomes necessary to transfer ownership of ZIPs to a new champio
 
 If you are interested in assuming ownership of a ZIP, send a message asking to take over, addressed to both the original author and the ZIP editor. If the original author doesn't respond to email in a timely manner, the ZIP editor will make a unilateral decision (it's not like such decisions can't be reversed :).
 
-ZIP Editors
-~~~~~~~~~~~
-
-The current ZIP editor is Luke Dashjr who can be contacted at [[mailto:luke_ZIPeditor@dashjr.org|luke_ZIPeditor@dashjr.org]].
 
 ZIP Editor Responsibilities & Workflow
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The ZIP editor subscribes to the Zcash development mailing list. All ZIP-related 
-correspondence should be sent (or CC'd) to luke_ZIPeditor@dashjr.org.
 
 For each new ZIP that comes in an editor does the following:
 
@@ -457,7 +450,51 @@ and the RFC Process also influenced this document.
 Please direct all comments to the ZIP Editors by email to <zips@z.cash> or by
 filing an issue in the `ZIPs issue tracker`_.
 
-.. important:: Please see `ZIPs <https://github.com/zcash/zips/>`_, for a current list.
+
+ZIP List
+--------
+
+.. list-table::
+
+   * - **Number**
+     - **Title**
+     - **Authors**
+     - **Category**
+   * - :fa:`archive` :ref:`zip0143`
+     - | Transaction Signature 
+       | Verification for Overwinter
+     - | Jack Grigg <jack@z.cash>
+       | Daira Hopwood <daira@z.cash>
+     - Consensus
+   * - :fa:`archive` :ref:`zip0200`
+     - | Network Upgrade 
+       | Mechanism
+     - Jack Grigg <jack@z.cash>
+     - Consensus
+   * - :fa:`archive` :ref:`zip0201`
+     - | Network Peer Management 
+       | for Overwinter
+     - Simon Liu <simon@z.cash>
+     - Network
+   * - :fa:`archive` :ref:`zip0202`
+     - | Version 3 Transaction
+       | Format for Overwinter
+     - Simon Liu <simon@z.cash>
+     - Consensus
+   * - :fa:`archive` :ref:`zip0203`
+     - Transaction Expiry
+     - Jay Graber <jay@z.cash>
+     - Consensus
+   * - :fa:`archive` :ref:`zip0243`
+     - | Transaction Signature 
+       | Verification for Sapling
+     - | Jack Grigg <jack@z.cash>
+       | Daira Hopwood <daira@z.cash>
+     - Consensus
+
+
+
+.. important:: Please see `ZIPs <https://github.com/zcash/zips/>`_, for a full current list.
 
 
 License

@@ -70,8 +70,7 @@ language = None
 exclude_patterns = ['rtd_pages/rel_notes/*.rst',
                     'rtd_pages/bitcoin_rel_notes/*.rst',
                     'rtd_pages/archive_git/*.rst',
-                    'rtd_pages/archive_wiki/*.rst',
-                    'rtd_pages/rtd_docs/zips/*.rst']
+                    'rtd_pages/archive_wiki/*.rst']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'

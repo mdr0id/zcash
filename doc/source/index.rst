@@ -86,8 +86,9 @@ License
    :hidden:
 
    rtd_pages/rtd_docs/user_guide.rst
-   rtd_pages/rtd_docs/index_zips.rst
    rtd_pages/rtd_docs/payment_api.rst
+   rtd_pages/rtd_docs/index_zips.rst
+   
 
 .. .. toctree::
 ..   :caption: Archive
