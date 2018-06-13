@@ -164,3 +164,7 @@ texinfo_documents = [
      author, 'ZCashDocumentation', 'One line description of project.',
      'Miscellaneous'),
 ]
+
+html_context = {
+    'script_files': ['_static/js/transifex-api.js', '//cdn.transifex.com/live.js']
+}
