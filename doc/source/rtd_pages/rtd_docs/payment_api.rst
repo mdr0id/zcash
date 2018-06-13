@@ -184,13 +184,14 @@ Key Management
 |                       |                        |                                                                                   |
 +-----------------------+------------------------+-----------------------------------------------------------------------------------+
 |.. _z_importkey:       | | zkey                 | | Wallet must be unlocked. Add a zkey as returned by                              |
-|                       | | [rescan=true]        | | z_exportkey to a node's wallet. The key should be                               |
-|z_importkey            |                        | | formatted using Base58Check as described in the Zcash                           |
-|                       |                        | | protocol spec. Set rescan to true (the default) to rescan                       |
-|                       |                        | | the entire local block database  for transactions affecting                     |
-|                       |                        | | any address or pubkey script in the wallet (including                           |
-|                       |                        | | transactions affecting the newly-added address for this                         |
-|                       |                        | | spending key).                                                                  |
+|                       | | [rescan=             | | z_exportkey to a node's wallet. The key should be                               |
+|z_importkey            | | whenkeyisnew]        | | formatted using Base58Check as described in the Zcash                           |
+|                       | | [startHeight=0]      | | protocol spec. Rescan can be "yes", "no" or the default                         |
+|                       |                        | | "whenkeyisnew" to rescan for transactions affecting any                         |
+|                       |                        | | address or pubkey script in the wallet (including transactions                  |
+|                       |                        | | affecting the newly-added address for this spending key).                       |
+|                       |                        | | The startHeight parameter sets the block height to start                        |
+|                       |                        | | the rescan from (default is 0).                                                 |
 |                       |                        |                                                                                   |
 |                       |                        +-----------------------------------------------------------------------------------+
 |                       |                        |``./zcash-cli z_importkey AKWUAkypwQjhZ6LLNa...``                                  |
