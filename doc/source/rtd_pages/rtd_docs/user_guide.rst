@@ -40,11 +40,11 @@ If you're on a Debian-based distribution, you can follow the :ref:`install-debia
    git fetch origin
 
 | Ensure you check the current release version from :fa:`github` `here <https://github.com/zcash/zcash>`_ .
-| If ``v1.1.1`` was current, issue the following commands:
+| If ``v1.1.2`` was current, issue the following commands:
 
 .. code-block:: bash
 
-   git checkout v1.1.1
+   git checkout v1.1.2
    ./zcutil/fetch-params.sh
    ./zcutil/build.sh -j$(nproc)
 
@@ -150,7 +150,7 @@ Now we need to get the Zcash software from the repository:
 
    git clone https://github.com/zcash/zcash.git
    cd zcash/
-   git checkout v1.1.1
+   git checkout v1.1.2
    ./zcutil/fetch-params.sh
 
 This will fetch our Sprout proving and verifying keys (the final ones created in the `Parameter Generation Ceremony <https://github.com/zcash/mpc>`_ , and place them into ``~/.zcash-params/``. These keys are just under 911MB in size, so it may take some time to download them.
