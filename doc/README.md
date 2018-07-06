@@ -11,7 +11,7 @@ If you are using Ubuntu 16.04, please install the required packages below:
 
 ```bash
 sudo apt-get install python-pip
-pip install sphinx_rtd_theme sphinx sphinx-autobuild
+pip install sphinx_rtd_theme sphinx sphinx-autobuild sphinx_fontawesome
 ```
 
 ## Setup

@@ -231,7 +231,7 @@ Key Management
 |                       |                        | | to the keys currently in the wallet. This call may need                         |
 |                       |                        | | to rescan all or parts of the block chain for transactions                      |
 |                       |                        | | affecting the newly-added keys, which may take several                          |
-|                       |                        | | minutes.Filename is the file to import. The path is                             |
+|                       |                        | | minutes. Filename is the file to import. The path is                            |
 |                       |                        | | relative to zcashd’s working directory. No value is                             |
 |                       |                        | | returned but a JSON-RPC error will be reported if a                             |
 |                       |                        | | failure occurred.                                                               |
@@ -277,7 +277,7 @@ Payment
 |**Command**                 | **Parameters**           | **Description**                                                                   |
 +----------------------------+--------------------------+-----------------------------------------------------------------------------------+
 |.. _z_listreceivedbyaddress:|| zaddr                   | | Return a list of amounts received by a zaddr belonging to                       |
-|                            || [minconf=1]             | | the node’s wallet.Optionally set the minimum                                    |
+|                            || [minconf=1]             | | the node’s wallet. Optionally set the minimum                                   |
 |z_listreceivedbyaddress     |                          | | number of confirmations which a received amount must have                       |
 |                            |                          | | in order to be included in the result.  Use 0 to count                          |
 |                            |                          | | unconfirmed transactions.                                                       |
@@ -442,7 +442,7 @@ It is currently not possible to cancel operations.
 +-------------------------+---------------------+------------------------------------------------------------------------------------+
 |.. _z_getoperationresult:| [operationids]      | | Return OperationStatus JSON objects for all completed                            |
 |                         |                     | | operations the node is currently aware of, and then                              |
-|z_getoperationresult     |                     | | remove the operation from memory.<br><br>Operationids                            |
+|z_getoperationresult     |                     | | remove the operation from memory. Operationids                                   |
 |                         |                     | | is an optional array to filter which operations you want                         |
 |                         |                     | | to receive status objects for. Output is a list of                               |
 |                         |                     | | operation status objects, where the status is either                             |
