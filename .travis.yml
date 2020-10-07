@@ -13,6 +13,7 @@ install:
   - sudo pip install pyblake2 pyzmq
 script:
   - ./zcutil/build.sh
+after_success:
   - ./zcutil/fetch-params.sh
   - ./qa/zcash/full_test_suite.py btest
   - ./qa/zcash/full_test_suite.py gtest
