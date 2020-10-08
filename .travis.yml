@@ -12,7 +12,7 @@ install:
   - sudo easy_install pip
   - sudo pip install pyblake2 pyzmq
 script:
-  - ./zcutil/build.sh -j$(sysctl -n hw.logicalcpu)
+  - ./zcutil/build.sh -j2
 after_success:
   - ./zcutil/fetch-params.sh
   - ./qa/zcash/full_test_suite.py btest
