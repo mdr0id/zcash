@@ -20,7 +20,7 @@ env:
   - TEST_TARGET=rpc
 install:
   - sudo easy_install pip
-  - sudo pip install pyblake2 pyzmq
+  - sudo pip install pyblake2 pyzmq simplejson
 script:
   - make -C ./depends
   - ./zcutil/build.sh -j2
