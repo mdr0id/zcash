@@ -30,15 +30,5 @@ script:
 after_success:
   - ./zcutil/fetch-params.sh
   - ./qa/zcash/full_test_suite.py $TEST_TARGET
-  - ./qa/zcash/full_test_suite.py $TEST_TARGET
-  - ./qa/zcash/full_test_suite.py $TEST_TARGET
-  - ./qa/zcash/full_test_suite.py $TEST_TARGET
-  - ./qa/zcash/full_test_suite.py $TEST_TARGET
-  - ./qa/zcash/full_test_suite.py $TEST_TARGET
-  - ./qa/zcash/full_test_suite.py $TEST_TARGET
-  - ./qa/zcash/full_test_suite.py $TEST_TARGET
-  - ./qa/zcash/full_test_suite.py $TEST_TARGET
-  - pyflakes $LINT_TARGET
-  - pyflakes $LINT_TARGET
   - pyflakes $LINT_TARGET
 
