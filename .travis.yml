@@ -8,6 +8,16 @@ addons:
       - autoconf
       - libtool
       - coreutils
+env:
+  - TEST_TARGET=btest
+  - TEST_TARGET=gtest
+  - TEST_TARGET=sec-hard
+  - TEST_TARGET=not-dot-so
+  - TEST_TARGET=util-test
+  - TEST_TARGET=secp256k1
+  - TEST_TARGET=univalue
+  - TEST_TARGET=rust-test
+  - TEST_TARGET=rpc
 install:
   - sudo easy_install pip
   - sudo pip install pyblake2 pyzmq
@@ -16,13 +26,13 @@ script:
   - ./zcutil/build.sh -j2
 after_success:
   - ./zcutil/fetch-params.sh
-  - ./qa/zcash/full_test_suite.py btest
-  - ./qa/zcash/full_test_suite.py gtest
-  - ./qa/zcash/full_test_suite.py sec-hard
-  - ./qa/zcash/full_test_suite.py not-dot-so
-  - ./qa/zcash/full_test_suite.py util-test
-  - ./qa/zcash/full_test_suite.py secp256k1
-  - ./qa/zcash/full_test_suite.py univalue
-  - ./qa/zcash/full_test_suite.py rust-test
-  - ./qa/zcash/full_test_suite.py rpc
+  - ./qa/zcash/full_test_suite.py $TEST_TARGET
+  - ./qa/zcash/full_test_suite.py $TEST_TARGET
+  - ./qa/zcash/full_test_suite.py $TEST_TARGET
+  - ./qa/zcash/full_test_suite.py $TEST_TARGET
+  - ./qa/zcash/full_test_suite.py $TEST_TARGET
+  - ./qa/zcash/full_test_suite.py $TEST_TARGET
+  - ./qa/zcash/full_test_suite.py $TEST_TARGET
+  - ./qa/zcash/full_test_suite.py $TEST_TARGET
+  - ./qa/zcash/full_test_suite.py $TEST_TARGET
   - pyflakes qa src zcutil
