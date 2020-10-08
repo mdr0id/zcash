@@ -22,8 +22,8 @@ env:
   - LINT_TARGET=src
   - LINT_TARGET=zcutil
 install:
-  - sudo easy_install pip
-  - sudo pip install pyblake2 pyzmq simplejson
+  - sudo easy_install pip simplejson
+  - sudo pip install pyblake2 pyzmq 
 script:
   - make -C ./depends
   - ./zcutil/build.sh -j2
