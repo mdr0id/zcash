@@ -18,6 +18,9 @@ env:
   - TEST_TARGET=univalue
   - TEST_TARGET=rust-test
   - TEST_TARGET=rpc
+  - LINT_TARGET=qa
+  - LINT_TARGET=src
+  - LINT_TARGET=zcutil
 install:
   - sudo easy_install pip
   - sudo pip install pyblake2 pyzmq simplejson
@@ -35,4 +38,7 @@ after_success:
   - ./qa/zcash/full_test_suite.py $TEST_TARGET
   - ./qa/zcash/full_test_suite.py $TEST_TARGET
   - ./qa/zcash/full_test_suite.py $TEST_TARGET
-  - pyflakes qa src zcutil
+  - pyflakes $LINT_TARGET
+  - pyflakes $LINT_TARGET
+  - pyflakes $LINT_TARGET
+
