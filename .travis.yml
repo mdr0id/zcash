@@ -8,6 +8,7 @@ addons:
       - autoconf
       - libtool
       - coreutils
+      - python-simplejson
 env:
   - TEST_TARGET=btest
   - TEST_TARGET=gtest
@@ -24,7 +25,6 @@ env:
 install:
   - sudo easy_install pip
   - sudo pip install pyblake2 pyzmq pyflakes
-  - sudo pip install simplejson
 script:
   - make -C ./depends
   - ./zcutil/build.sh -j2
