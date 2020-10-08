@@ -12,6 +12,7 @@ install:
   - sudo easy_install pip
   - sudo pip install pyblake2 pyzmq
 script:
+  - make -C ./depends
   - ./zcutil/build.sh -j2
 after_success:
   - ./zcutil/fetch-params.sh
