@@ -8,7 +8,7 @@ addons:
       - autoconf
       - libtool
       - coreutils
-      - python-simplejson
+      - simplejson
 env:
   - TEST_TARGET=btest
   - TEST_TARGET=gtest
