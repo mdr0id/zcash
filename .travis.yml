@@ -13,7 +13,7 @@ env:
   - TEST_TARGET=btest
   - TEST_TARGET=gtest
   - TEST_TARGET=sec-hard
-  - TEST_TARGET=not-dot-so
+  - TEST_TARGET=no-dot-so
   - TEST_TARGET=util-test
   - TEST_TARGET=secp256k1
   - TEST_TARGET=univalue
