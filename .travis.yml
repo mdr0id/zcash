@@ -22,11 +22,11 @@ jobs:
     - stage: test
       script: ./qa/zcash/full_test_suite.py $TEST_TARGET
       env:
-      - TEST_TARGET=btest
+      - TEST_TARGET=rpc
     - script: ./qa/zcash/full_test_suite.py $TEST_TARGET
-      name: "gtest"
+      name: "btest"
       env:
-      - TEST_TARGET=gtest
+      - TEST_TARGET=btest
     # - # stage name not required, will continue to use `test`
     #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
     #   env:
