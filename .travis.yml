@@ -11,8 +11,9 @@ addons:
       - python3
 
 install:
-  - sudo easy_install pip3
-  - sudo pip3 install pyblake2 pyzmq pyflakes simplejson
+  - python --version
+  - sudo easy_install pip
+  - sudo pip install pyblake2 pyzmq pyflakes simplejson
 script:
   - make -C ./depends
   - ./zcutil/build.sh -j2
