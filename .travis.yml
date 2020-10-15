@@ -23,54 +23,54 @@ jobs:
       script: ./qa/zcash/full_test_suite.py $TEST_TARGET
       env:
       - TEST_TARGET=btest
-    - # stage name not required, will continue to use `test`
-      script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    - script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+      name: "gtest"
       env:
       - TEST_TARGET=gtest
-    - # stage name not required, will continue to use `test`
-      script: ./qa/zcash/full_test_suite.py $TEST_TARGET
-      env:
-      -TEST_TARGET=sec-hard
-    - # stage name not required, will continue to use `test`
-      script: ./qa/zcash/full_test_suite.py $TEST_TARGET
-      env:
-      - TEST_TARGET=no-dot-so
-    - # stage name not required, will continue to use `test`
-      script: ./qa/zcash/full_test_suite.py $TEST_TARGET
-      env:
-      - TEST_TARGET=util-test
-    - # stage name not required, will continue to use `test`
-      script: ./qa/zcash/full_test_suite.py $TEST_TARGET
-      env:
-      - TEST_TARGET=secp256k1
-    - # stage name not required, will continue to use `test`
-      script: ./qa/zcash/full_test_suite.py $TEST_TARGET
-      env:
-      - TEST_TARGET=univalue
-    - # stage name not required, will continue to use `test`
-      script: ./qa/zcash/full_test_suite.py $TEST_TARGET
-      env:
-      - TEST_TARGET=secp256k1
-    - # stage name not required, will continue to use `test`
-      script: ./qa/zcash/full_test_suite.py $TEST_TARGET
-      env:
-      - TEST_TARGET=rust-test
-    - # stage name not required, will continue to use `test`
-      script: ./qa/zcash/full_test_suite.py $TEST_TARGET
-      env:
-      - TEST_TARGET=rpc
-    - stage: lint
-      script: pyflakes $LINT_TARGET
-      env:
-      - LINT_TARGET=qa
-    - # stage name not required, will continue to use `lint`
-      script: pyflakes $LINT_TARGET
-      env:
-      - LINT_TARGET=src
-    - # stage name not required, will continue to use `lint`
-      script: pyflakes $LINT_TARGET
-      env:
-      - LINT_TARGET=zcutil
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   -TEST_TARGET=sec-hard
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=no-dot-so
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=util-test
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=secp256k1
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=univalue
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=secp256k1
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=rust-test
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=rpc
+    # - stage: lint
+    #   script: pyflakes $LINT_TARGET
+    #   env:
+    #   - LINT_TARGET=qa
+    # - # stage name not required, will continue to use `lint`
+    #   script: pyflakes $LINT_TARGET
+    #   env:
+    #   - LINT_TARGET=src
+    # - # stage name not required, will continue to use `lint`
+    #   script: pyflakes $LINT_TARGET
+    #   env:
+    #   - LINT_TARGET=zcutil
 
 #jobs:
 #  include:
