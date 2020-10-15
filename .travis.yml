@@ -9,6 +9,7 @@ addons:
       - libtool
       - coreutils
       - python3
+    update: true
 
 install:
   - python --version
