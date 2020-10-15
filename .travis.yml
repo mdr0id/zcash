@@ -8,7 +8,6 @@ addons:
       - autoconf
       - libtool
       - coreutils
-    update: true
 
 install:
   - python3 --version
