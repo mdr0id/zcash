@@ -1,0 +1,86 @@
+os: osx
+addons:
+  homebrew:
+    packages:
+      - git
+      - pkgconfig
+      - automake
+      - autoconf
+      - libtool
+      - coreutils
+
+install:
+  - python3 --version
+  - curl -O https://bootstrap.pypa.io/get-pip.py
+  - sudo python3 get-pip.py
+  - sudo pip3 install pyblake2 pyzmq pyflakes simplejson
+script:
+  - make -C ./depends
+  - ./zcutil/build.sh -j2
+  - ./zcutil/fetch-params.sh
+
+jobs:
+  include:
+    - stage: test
+      script:
+      - python3 --version
+      - pip3 list | grep simplejson
+      env:
+      - TEST_TARGET=rpc
+    - script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+      name: "btest"
+      env:
+      - TEST_TARGET=btest
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   -TEST_TARGET=sec-hard
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=no-dot-so
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=util-test
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=secp256k1
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=univalue
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=secp256k1
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=rust-test
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=rpc
+    # - stage: lint
+    #   script: pyflakes $LINT_TARGET
+    #   env:
+    #   - LINT_TARGET=qa
+    # - # stage name not required, will continue to use `lint`
+    #   script: pyflakes $LINT_TARGET
+    #   env:
+    #   - LINT_TARGET=src
+    # - # stage name not required, will continue to use `lint`
+    #   script: pyflakes $LINT_TARGET
+    #   env:
+    #   - LINT_TARGET=zcutil
+
+#jobs:
+#  include:
+#    - stage: 
+#after_success:
+#  - ./zcutil/fetch-params.sh
+#  - ./qa/zcash/full_test_suite.py $TEST_TARGET
+#  - pyflakes $LINT_TARGET
+
