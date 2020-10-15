@@ -12,8 +12,9 @@ addons:
 
 install:
   - python3 --version
-  - sudo easy_install pip
-  - sudo pip install pyblake2 pyzmq pyflakes simplejson
+  - curl -O https://bootstrap.pypa.io/get-pip.py
+  - sudo python3 get-pip.py
+  - sudo pip3 install pyblake2 pyzmq pyflakes simplejson
 script:
   - make -C ./depends
   - ./zcutil/build.sh -j2
