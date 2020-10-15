@@ -8,13 +8,12 @@ addons:
       - autoconf
       - libtool
       - coreutils
-      - python3
     update: true
 
 install:
-  - python --version
-  - sudo easy_install pip
-  - sudo pip install pyblake2 pyzmq pyflakes simplejson
+  - python3 --version
+  - sudo easy_install pip3
+  - sudo pip3 install pyblake2 pyzmq pyflakes simplejson
 script:
   - make -C ./depends
   - ./zcutil/build.sh -j2
