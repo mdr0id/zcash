@@ -23,10 +23,8 @@ jobs:
   include:
     - stage: test
       script:
-      - make -C ./depends
-      - ./zcutil/build.sh -j2
-      - ./zcutil/fetch-params.sh
-      - ./qa/zcash/full_test_suite.py $TEST_TARGET
+      - python3 --version
+      - pip3 list | grep simplejson
       env:
       - TEST_TARGET=rpc
     - script: ./qa/zcash/full_test_suite.py $TEST_TARGET
