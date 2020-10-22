@@ -4,17 +4,15 @@ langauge: bash
 install:
   - pwd
   - choco install ipfs
-  - ipfs init
-  - ipfs daemon &
   #- sudo pip3 install pyblake2 pyzmq pyflakes simplejson
-script:
-  - 
 
 
 jobs:
   include:
     - stage: test
       script:
+      - ipfs init
+      - ipfs daemon &
       - pwd
       - mkdir /c/Users/travis/AppData/Roaming/ZcashParams
       - ipfs get QmUSFo5zgPPXXejidzFWZcxVyF3AJH6Pr9br6Xisdww1r1 --output /c/Users/travis/AppData/Roaming/ZcashParams
