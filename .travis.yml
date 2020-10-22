@@ -1,15 +1,12 @@
 os: windows
 
 install:
-  - python3 --version
-  - curl -O https://bootstrap.pypa.io/get-pip.py
-  - sudo python3 get-pip.py
-  - sudo pip3 install pyblake2 pyzmq pyflakes simplejson
-script:
   - pwd
   - choco install ipfs
   - ipfs init
   - ipfs daemon &
+  #- sudo pip3 install pyblake2 pyzmq pyflakes simplejson
+script:
   - ipfs get QmUSFo5zgPPXXejidzFWZcxVyF3AJH6Pr9br6Xisdww1r1 --output
 
 
