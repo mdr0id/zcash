@@ -8,7 +8,7 @@ install:
   - ipfs daemon &
   #- sudo pip3 install pyblake2 pyzmq pyflakes simplejson
 script:
-  - ipfs get QmUSFo5zgPPXXejidzFWZcxVyF3AJH6Pr9br6Xisdww1r1 --output
+  - 
 
 
 jobs:
@@ -16,6 +16,8 @@ jobs:
     - stage: test
       script:
       - pwd
+      - mkdir /c/Users/travis/AppData/Roaming/ZcashParams
+      - ipfs get QmUSFo5zgPPXXejidzFWZcxVyF3AJH6Pr9br6Xisdww1r1 --output /c/Users/travis/AppData/Roaming/ZcashParams
     # - # stage name not required, will continue to use `test`
     #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
     #   env:
