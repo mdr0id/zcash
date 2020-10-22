@@ -1,0 +1,73 @@
+os: windows
+
+install:
+  - python3 --version
+  - curl -O https://bootstrap.pypa.io/get-pip.py
+  - sudo python3 get-pip.py
+  - sudo pip3 install pyblake2 pyzmq pyflakes simplejson
+script:
+  - pwd
+  - choco install ipfs
+  - ipfs init
+  - ipfs daemon &
+  - ipfs get QmUSFo5zgPPXXejidzFWZcxVyF3AJH6Pr9br6Xisdww1r1 --output
+
+
+jobs:
+  include:
+    - stage: test
+      script:
+      - pwd
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   -TEST_TARGET=sec-hard
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=no-dot-so
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=util-test
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=secp256k1
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=univalue
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=secp256k1
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=rust-test
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=rpc
+    # - stage: lint
+    #   script: pyflakes $LINT_TARGET
+    #   env:
+    #   - LINT_TARGET=qa
+    # - # stage name not required, will continue to use `lint`
+    #   script: pyflakes $LINT_TARGET
+    #   env:
+    #   - LINT_TARGET=src
+    # - # stage name not required, will continue to use `lint`
+    #   script: pyflakes $LINT_TARGET
+    #   env:
+    #   - LINT_TARGET=zcutil
+
+#jobs:
+#  include:
+#    - stage: 
+#after_success:
+#  - ./zcutil/fetch-params.sh
+#  - ./qa/zcash/full_test_suite.py $TEST_TARGET
+#  - pyflakes $LINT_TARGET
+
