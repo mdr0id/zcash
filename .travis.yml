@@ -4,7 +4,8 @@ langauge: bash
 install:
   - pwd
   - choco install ipfs python
-  - pip3 install pyblake2 pyzmq pyflakes simplejson
+  - python --version
+  - pip install pyblake2 pyzmq pyflakes simplejson
   #- sudo pip3 install pyblake2 pyzmq pyflakes simplejson
 
 
