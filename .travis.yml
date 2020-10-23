@@ -8,8 +8,9 @@ jobs:
       script:
       - choco install ipfs python
       - python --version
-      - wget https://bootstrap.pypa.io/get-pip.py
-      - python3 get-pip.py
+      #- wget https://bootstrap.pypa.io/get-pip.py
+      #- python3 get-pip.py
+      - python -m pip install -U pip
       - pip install pyblake2 pyzmq pyflakes simplejson
       - ipfs init
       - ipfs daemon &
