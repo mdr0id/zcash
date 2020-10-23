@@ -7,7 +7,9 @@ jobs:
     - stage: test
       before_script:
       - choco install ipfs python3 --pre
+      - sleep 10
       - choco install pip
+      - sleep 10
       - python --version
       #- wget https://bootstrap.pypa.io/get-pip.py
       #- python get-pip.py
