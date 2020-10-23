@@ -12,7 +12,7 @@ jobs:
   include:
     - stage: test
       script:
-      - pip install pyblake2 pyzmq pyflakes simplejson
+      - py -m pip install pyblake2 pyzmq pyflakes simplejson
       - ipfs init
       - ipfs daemon &
       - pwd
