@@ -12,7 +12,8 @@ jobs:
   include:
     - stage: test
       script:
-      - py -m pip install pyblake2 pyzmq pyflakes simplejson
+      - choco install pip
+      - pip install pyblake2 pyzmq pyflakes simplejson
       - ipfs init
       - ipfs daemon &
       - pwd
