@@ -16,7 +16,7 @@ jobs:
       - pwd
       - mkdir /c/Users/travis/AppData/Roaming/ZcashParams
       - sleep 10
-      - ipfs get QmUSFo5zgPPXXejidzFWZcxVyF3AJH6Pr9br6Xisdww1r1 --output /c/Users/travis/AppData/Roaming/ZcashParams
+      - ipfs get -v QmUSFo5zgPPXXejidzFWZcxVyF3AJH6Pr9br6Xisdww1r1 --output /c/Users/travis/AppData/Roaming/ZcashParams
       - ls /c/Users/travis/AppData/Roaming/ZcashParams
     # - # stage name not required, will continue to use `test`
     #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
