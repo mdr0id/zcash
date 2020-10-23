@@ -5,7 +5,7 @@ langauge: bash
 jobs:
   include:
     - stage: test
-      script:
+      before_script:
       - choco install ipfs python
       - python --version
       #- wget https://bootstrap.pypa.io/get-pip.py
@@ -15,9 +15,10 @@ jobs:
       - pip install pyblake2 pyzmq pyflakes simplejson
       - ipfs init
       - ipfs daemon &
+      script:
       - pwd
       - mkdir /c/Users/travis/AppData/Roaming/ZcashParams
-      - sleep 10
+      #- sleep 10
       - travis_wait 60 ipfs get QmUSFo5zgPPXXejidzFWZcxVyF3AJH6Pr9br6Xisdww1r1 --output /c/Users/travis/AppData/Roaming/ZcashParams
       - ls /c/Users/travis/AppData/Roaming/ZcashParams
       - travis_wait 60 ipfs get QmasctsCicNdwpLYq9qgcK3fRRqULFrozKbtTrLVgNXwf4 --output /c/Users/travis/build/mdr0id/zcash/src
