@@ -12,7 +12,8 @@ jobs:
   include:
     - stage: test
       script:
-      - choco install pip
+      - wget https://bootstrap.pypa.io/get-pip.py
+      - python get-pip.py
       - pip install pyblake2 pyzmq pyflakes simplejson
       - ipfs init
       - ipfs daemon &
