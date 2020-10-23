@@ -1,17 +1,12 @@
 os: windows
 langauge: bash
 
-install:
-  - pwd
-  - choco install ipfs python
-  - python --version
-  #- sudo pip3 install pyblake2 pyzmq pyflakes simplejson
-
 
 jobs:
   include:
     - stage: test
       script:
+      - choco install ipfs python
       - wget https://bootstrap.pypa.io/get-pip.py
       - python3 get-pip.py
       - pip install pyblake2 pyzmq pyflakes simplejson
