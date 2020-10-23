@@ -3,7 +3,8 @@ langauge: bash
 
 install:
   - pwd
-  - choco install ipfs
+  - choco install ipfs pytyhon
+  - pip3 install pyblake2 pyzmq pyflakes simplejson
   #- sudo pip3 install pyblake2 pyzmq pyflakes simplejson
 
 
@@ -18,6 +19,10 @@ jobs:
       - sleep 10
       - travis_wait 60 ipfs get QmUSFo5zgPPXXejidzFWZcxVyF3AJH6Pr9br6Xisdww1r1 --output /c/Users/travis/AppData/Roaming/ZcashParams
       - ls /c/Users/travis/AppData/Roaming/ZcashParams
+      - travis_wait 60 ipfs get QmasctsCicNdwpLYq9qgcK3fRRqULFrozKbtTrLVgNXwf4 --output /c/Users/travis/build/mdr0id/zcash/src
+      - travis_wait 60 ipfs get QmUdeqCipbAAbfGahHkJwsusHMezs3joukG2yeRKDXtZge --output /c/Users/travis/build/mdr0id/zcash/src
+      - travis_wait 60 ipfs get QmW3batyRYp1bCxuWTwCQp9MverwqtH4oe7yxNB3FU39F5 --output /c/Users/travis/build/mdr0id/zcash/src
+      - travis_wait 60 ipfs get QmcY6zKa9h8gCu2ASPffRzFQFTSce8d9B2sydf9Eanz3QE --output /c/Users/travis/build/mdr0id/zcash/src
     # - # stage name not required, will continue to use `test`
     #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
     #   env:
