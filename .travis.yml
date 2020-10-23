@@ -1,0 +1,84 @@
+os: windows
+langauge: bash
+
+
+jobs:
+  include:
+    - stage: test
+      before_script:
+      - choco install ipfs python3 --pre
+      - sleep 10
+      - choco install pip
+      - sleep 10
+      - python --version
+      #- wget https://bootstrap.pypa.io/get-pip.py
+      #- python get-pip.py
+      #- python -m pip install -U pip
+      #- pip install --user pipenv
+      - py -m pip
+      - pip install pyblake2 pyzmq pyflakes simplejson
+      - ipfs init
+      - ipfs daemon &
+      script:
+      - pwd
+      - mkdir /c/Users/travis/AppData/Roaming/ZcashParams
+      #- sleep 10
+      - travis_wait 60 ipfs get QmUSFo5zgPPXXejidzFWZcxVyF3AJH6Pr9br6Xisdww1r1 --output /c/Users/travis/AppData/Roaming/ZcashParams
+      - ls /c/Users/travis/AppData/Roaming/ZcashParams
+      - travis_wait 60 ipfs get QmasctsCicNdwpLYq9qgcK3fRRqULFrozKbtTrLVgNXwf4 --output /c/Users/travis/build/mdr0id/zcash/src
+      - travis_wait 60 ipfs get QmUdeqCipbAAbfGahHkJwsusHMezs3joukG2yeRKDXtZge --output /c/Users/travis/build/mdr0id/zcash/src
+      - travis_wait 60 ipfs get QmW3batyRYp1bCxuWTwCQp9MverwqtH4oe7yxNB3FU39F5 --output /c/Users/travis/build/mdr0id/zcash/src
+      - travis_wait 60 ipfs get QmcY6zKa9h8gCu2ASPffRzFQFTSce8d9B2sydf9Eanz3QE --output /c/Users/travis/build/mdr0id/zcash/src
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   -TEST_TARGET=sec-hard
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=no-dot-so
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=util-test
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=secp256k1
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=univalue
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=secp256k1
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=rust-test
+    # - # stage name not required, will continue to use `test`
+    #   script: ./qa/zcash/full_test_suite.py $TEST_TARGET
+    #   env:
+    #   - TEST_TARGET=rpc
+    # - stage: lint
+    #   script: pyflakes $LINT_TARGET
+    #   env:
+    #   - LINT_TARGET=qa
+    # - # stage name not required, will continue to use `lint`
+    #   script: pyflakes $LINT_TARGET
+    #   env:
+    #   - LINT_TARGET=src
+    # - # stage name not required, will continue to use `lint`
+    #   script: pyflakes $LINT_TARGET
+    #   env:
+    #   - LINT_TARGET=zcutil
+
+#jobs:
+#  include:
+#    - stage: 
+#after_success:
+#  - ./zcutil/fetch-params.sh
+#  - ./qa/zcash/full_test_suite.py $TEST_TARGET
+#  - pyflakes $LINT_TARGET
+
